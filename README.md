@@ -14,4 +14,4 @@ Anda juga memerlukan alat-alat seperti [Steghide](https://github.com/StefanoDeVu
 
 ## Instalasi 
 
-Panduan instalasi CrackStego tersedia [di sini](https://github.com/fixploit03/CrackStego/blob/main/INSTALL).
+Panduan instalasi CrackStego tersedia [di sini](https://github.com/fixploit03/CrackStego/blob/main/INSTAL).
