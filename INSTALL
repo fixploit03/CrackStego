@@ -1,0 +1,19 @@
+Dibuat [27-10-2024]
+
+Berikut ini langkah-langkah untuk menginstal CrackStego
+-------------------------------------------------------
+Catatan: Pastikan kamu sudah berada dalam mode superuser (root).
+
+1. apt-get updat
+2. apt-get install binutils
+2. apt-get install steghide
+3. apt-get install python3
+4. apt-get install git
+5. git clone https://github.com/fixploit03/CrackStego/
+6. cd CrackStego 
+
+Menjalankan program 
+-------------------
+python3 CrackStego.py
+
+- fixploit03 -
