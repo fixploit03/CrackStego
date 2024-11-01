@@ -15,3 +15,7 @@ Anda juga memerlukan alat-alat seperti [Steghide](https://github.com/StefanoDeVu
 ## Instalasi 
 
 Panduan instalasi CrackStego tersedia [di sini](https://github.com/fixploit03/CrackStego/blob/main/INSTAL).
+
+## LISENSI
+
+program ini dirilis di bawah lisensi [WTFPL](https://github.com/fixploit03/CrackStego/blob/main/LICENSE).
