@@ -4,4 +4,4 @@ CrackStego adalah program Python yang dirancang untuk meng-crack file stego yang
 
 ## Instalasi 
 
-Panduan instalasi CrackStego tersedia [di sini]().
+Panduan instalasi CrackStego tersedia [di sini](https://github.com/fixploit03/CrackStego/blob/main/INSTALL).
