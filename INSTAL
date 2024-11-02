@@ -4,7 +4,7 @@ Berikut ini langkah-langkah untuk menginstal CrackStego
 -------------------------------------------------------
 Catatan: Pastikan kamu sudah berada dalam mode superuser (root).
 
-1. apt-get updat
+1. apt-get update 
 2. apt-get install binutils
 2. apt-get install steghide
 3. apt-get install python3
