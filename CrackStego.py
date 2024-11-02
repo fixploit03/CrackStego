@@ -39,19 +39,6 @@ print(f"{p}[{k}*{p}] {p}Mengecek sistem operasi...{r}")
 time.sleep(3)
 sistem_operasi = platform.system()
 if sistem_operasi == "Linux":
-    file_linux = "/etc/os-release"
-    try:
-        with open(file_linux, "r") as fl:
-            isi_file_linux = fl.read()
-            cari_id_linux = re.search(r"ID=(\w+)", isi_file_linux)
-            if cari_id_linux:
-                id_linux = cari_id_linux.group(1)
-    except KeyboardInterrupt:
-        print(f"\n{p}[{k}-{p}] Program dihentikan oleh pengguna.{r}")
-        exit(1)
-    except Exception as e:
-        print(f"{p}[{k}-{p}] Terjadi kesalahan: {e}{r}")
-        exit(1)
     print(f"{p}[{k}+{p}] Sistem operasi : {k}{sistem_operasi}{r}")
 else:
     print(f"{p}[{k}-{p}] Sistem operasi Anda tidak mendukung untuk menjalankan program CrackStego.{r}")
