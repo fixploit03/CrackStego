@@ -7,6 +7,7 @@
 # Github    : https://github.com/fixploit03/CrackStego/
 #------------------------------------------------------------------------------------------------------------------
 
+# Import modul yang dibutuhkan 
 import os
 import re
 import subprocess           
@@ -14,7 +15,7 @@ import time
 import platform
 from datetime import datetime
 
-## Variabel warna
+# Variabel warna
 k = "\033[33m" # Kuning 
 p = "\033[37m" # Putih 
 r = "\033[0m"  # Reset 
