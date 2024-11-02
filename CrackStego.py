@@ -53,7 +53,6 @@ if sistem_operasi == "Linux":
     except Exception as e:
         print(f"{p}[{k}-{p}] Terjadi kesalahan: {e}{r}")
         exit(1)
-    print(f"{p}[{k}+{p}] Sistem operasi : {k}{sistem_operasi}{r}")
 else:
     print(f"{p}[{k}-{p}] Sistem operasi Anda tidak mendukung untuk menjalankan program CrackStego.{r}")
     exit(1)
