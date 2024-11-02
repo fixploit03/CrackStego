@@ -46,13 +46,13 @@ if sistem_operasi == "Linux":
             cari_id_linux = re.search(r"ID=(\w+)", isi_file_linux)
             if cari_id_linux:
                 id_linux = cari_id_linux.group(1)
-                print(f"{p}[{k}+{p}] Sistem operasi : {k}{sistem_operasi} {p}({k}{id_linux}{p}){r}")
     except KeyboardInterrupt:
         print(f"\n{p}[{k}-{p}] Program dihentikan oleh pengguna.{r}")
         exit(1)
     except Exception as e:
         print(f"{p}[{k}-{p}] Terjadi kesalahan: {e}{r}")
         exit(1)
+    print(f"{p}[{k}+{p}] Sistem operasi : {k}{sistem_operasi}{r}")
 else:
     print(f"{p}[{k}-{p}] Sistem operasi Anda tidak mendukung untuk menjalankan program CrackStego.{r}")
     exit(1)
