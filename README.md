@@ -15,3 +15,5 @@ Anda juga memerlukan alat-alat seperti [Steghide](https://github.com/StefanoDeVu
 ## Instalasi :rocket:
 
 Panduan instalasi CrackStego tersedia [di sini](https://github.com/fixploit03/CrackStego/blob/main/INSTAL).
+
+> ⭐ Jangan lupa beri bintang jika Anda menyukai program ini!
