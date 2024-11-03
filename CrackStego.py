@@ -96,17 +96,17 @@ else:
 
 # Banner program 
 print("""
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-@             ╔═╗╦═╗╔═╗╔═╗╦╔═╔═╗╔╦╗╔═╗╔═╗╔═╗             @
-@             ║  ╠╦╝╠═╣║  ╠╩╗╚═╗ ║ ║╣ ║ ╦║ ║             @
-@             ╚═╝╩╚═╩ ╩╚═╝╩ ╩╚═╝ ╩ ╚═╝╚═╝╚═╝             @
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@               ╔═╗╦═╗╔═╗╔═╗╦╔═╔═╗╔╦╗╔═╗╔═╗╔═╗               @
+@               ║  ╠╦╝╠═╣║  ╠╩╗╚═╗ ║ ║╣ ║ ╦║ ║               @
+@               ╚═╝╩╚═╩ ╩╚═╝╩ ╩╚═╝ ╩ ╚═╝╚═╝╚═╝               @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-[*] Program   : CrackStego
-[*] Deskripsi : Program Python untuk meng-crack file stego
-[*] Pembuat   : fixploit03
-[*] Github    : https://github.com/fixploit03/CrackStego/
-[*] Team      : ArSec (Arjuna Security)
+[*] Program   : CrackStego                                 [*]
+[*] Deskripsi : Program Python untuk meng-crack file stego [*] 
+[*] Pembuat   : fixploit03                                 [*]
+[*] Github    : https://github.com/fixploit03/CrackStego/  [*]
+[*] Team      : ArSec (Arjuna Security)                    [*]
 """)
 
 # Meminta nama file stego dari pengguna
