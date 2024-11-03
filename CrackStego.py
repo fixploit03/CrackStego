@@ -101,7 +101,7 @@ print("""
 @               ╔═╗╦═╗╔═╗╔═╗╦╔═╔═╗╔╦╗╔═╗╔═╗╔═╗               @
 @               ║  ╠╦╝╠═╣║  ╠╩╗╚═╗ ║ ║╣ ║ ╦║ ║               @
 @               ╚═╝╩╚═╩ ╩╚═╝╩ ╩╚═╝ ╩ ╚═╝╚═╝╚═╝               @
-@         Program Python untuk meng-crack file stego         @
+@         Program Python untuk Meng-Crack File Stego         @
 @          https://github.com/fixploit03/CrackStego          @
 @                                                            @
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
