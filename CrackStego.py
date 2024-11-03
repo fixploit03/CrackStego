@@ -15,74 +15,69 @@ import time
 import platform
 from datetime import datetime
 
-# Variabel warna
-k = "\033[33m" # Kuning 
-p = "\033[37m" # Putih 
-r = "\033[0m"  # Reset 
-
 # Banner selamat datang
 print(f"""
-{k}Selamat datang di CrackStego{r}
+Selamat datang di CrackStego
 
-{k}Peringatan{r}
-{p}----------{r}
-{p}Program ini dirancang hanya untuk tujuan pendidikan dan penelitian yang sah.{r}
-{p}Dilarang keras menggunakan program ini untuk kegiatan ilegal, merusak,{r}
-{p}atau tanpa izin pemilik file. Pengguna bertanggung jawab penuh atas segala{r}
-{p}konsekuensi hukum yang mungkin timbul dari penggunaan program ini. Pastikan{r}
-{p}untuk selalu mematuhi peraturan dan etika yang berlaku di wilayah Anda.{r}
+Peringatan
+----------
+Program ini dirancang hanya untuk tujuan pendidikan dan penelitian yang sah.
+Dilarang keras menggunakan program ini untuk kegiatan ilegal, merusak,
+atau tanpa izin pemilik file. Pengguna bertanggung jawab penuh atas segala
+konsekuensi hukum yang mungkin timbul dari penggunaan program ini. Pastikan
+untuk selalu mematuhi peraturan dan etika yang berlaku di wilayah Anda.
 """)
 time.sleep(3)
 
 # Mengecek sistem operasi
-print(f"{p}[{k}*{p}] {p}Mengecek sistem operasi...{r}")
+print(f"[*] Mengecek sistem operasi...")
 time.sleep(3)
 sistem_operasi = platform.system()
 if sistem_operasi == "Linux":
-    print(f"{p}[{k}+{p}] Sistem operasi : {k}{sistem_operasi}{r}")
+    print(f"[+] Sistem operasi : {sistem_operasi}")
 elif sistem_operasi == "Windows":
-    print(f"{p}[{k}+{p}] Sistem operasi : {k}{sistem_operasi}{r}")
+    print(f"[+] Sistem operasi : {sistem_operasi}")
 else:
-    print(f"{p}[{k}-{p}] Sistem operasi Anda tidak mendukung untuk menjalankan program CrackStego.{r}")
+    print("[-] Sistem operasi Anda tidak mendukung untuk menjalankan program CrackStego.")
     exit(1)
 
 # Mengecek Steghide
-print(f"{p}[{k}*{p}] Mengecek Steghide...{r}")
+print("[*] Mengecek Steghide...")
 time.sleep(3)
 perintah_cek_steghide = f"steghide --version"
 try:
     cek_file_steghide = subprocess.run(perintah_cek_steghide, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     if cek_file_steghide.returncode == 0:
-        print(f"{p}[{k}+{p}] Steghide sudah terinstal.{r}")
+        print("[+] Steghide sudah terinstal.")
     else:
-        print(f"{p}[{k}-{p}] Steghide belum terinstal.{r}")
-        print(f"{p}[{k}-{p}] Instal dengan mengetikkan perintah 'sudo apt-get install steghide'.{r}")
+        print("[-] Steghide belum terinstal.")
+        print("[-] Instal dengan mengetikkan perintah 'sudo apt-get install steghide'.")
         exit(1)
 except KeyboardInterrupt:
-    print(f"\n{p}[{k}-{p}] Program dihentikan oleh pengguna.{r}")
+    print("\n[-] Program dihentikan oleh pengguna.")
     exit(1)
 except Exception as e:
-    print(f"{p}[{k}-{p}] Terjadi kesalahan: {e}{r}")
+    print(f"[-] Terjadi kesalahan: {e}")
     exit(1)
 
 # Mengecek Binutils
-print(f"{p}[{k}*{p}] Mengecek Binutils...{r}")
+print("[*] Mengecek Binutils...")
 time.sleep(3)
 perintah_cek_binutils = f"ld --version"
 try:
     cek_file_binutils = subprocess.run(perintah_cek_binutils, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     if cek_file_binutils.returncode == 0:
-        print(f"{p}[{k}+{p}] Binutils sudah terinstal.{r}")
-        input(f"\n{p}Tekan [{k}Enter{p}] untuk melanjutkan...{r}")
+        print("[+] Binutils sudah terinstal.")
+        input("\nTekan [Enter] untuk melanjutkan...")
     else:
-        print(f"{p}[{k}-{p}] Binutils belum terinstal.{r}")
-        print(f"{p}[{k}-{p}] Instal dengan mengetikkan perintah 'sudo apt-get install binutils'.{r}")
+        print("[-] Binutils belum terinstal.")
+        print("[-] Instal dengan mengetikkan perintah 'sudo apt-get install binutils'.")
         exit(1)
 except KeyboardInterrupt:
-    print(f"\n{p}[{k}-{p}] Program dihentikan oleh pengguna.{r}")
+    print("\n[-] Program dihentikan oleh pengguna.")
     exit(1)
 except Exception as e:
-    print(f"{p}[{k}-{p}] Terjadi kesalahan: {e}{r}")
+    print(f"[-] Terjadi kesalahan: {e}")
     exit(1)
 
 if sistem_operasi == "Linux":
@@ -90,7 +85,7 @@ if sistem_operasi == "Linux":
 elif sistem_operasi == "Windows":
     os.system("cls")
 else:
-    print(f"{p}[{k}-{p}] Sistem operasi Anda tidak mendukung untuk menjalankan program CrackStego.{r}")
+    print("[-] Sistem operasi Anda tidak mendukung untuk menjalankan program CrackStego.")
     exit(1)
 
 # Banner program 
