@@ -4,6 +4,8 @@ Berikut ini adalah persyaratan dan langkah-langkah untuk menginstal CrackStego d
 
 ## Persyaratan 
 
+Berikut adalah persyaratan yang diperlukan untuk menjalankan program CrackStego.
+
 - Python
 - Git
 - MSYS2
@@ -16,7 +18,7 @@ Berikut ini adalah persyaratan dan langkah-langkah untuk menginstal CrackStego d
 - MSYS2 : https://www.msys2.org/
 - Steghide : https://steghide.sourceforge.net/
 
-## Instalasi CrackStego 
+## Instalasi  
 
 1. Unduh dan instal semua persyaratan yang diperlukan.
 2. Tambahkan semua folder persyaratan ke variabel lingkungan PATH Windows.
@@ -27,6 +29,6 @@ Berikut ini adalah persyaratan dan langkah-langkah untuk menginstal CrackStego d
 7. Ketikkan perintah `cd CrackStego`.
 8. Selesai.
 
-## Menjalankan CrackStego
+## Menjalankan
 
 Untuk menjalankan program CrackStego, cukup ketikkan perintah `python3 CrackStego.py`.
