@@ -29,5 +29,4 @@ Berikut ini adalah persyaratan dan langkah-langkah untuk menginstal CrackStego d
 
 ## Menjalankan CrackStego
 
-python3 CrackStego.py
-
+Untuk menjalankan program CrackStego, cukup ketikkan perintah `python3 CrackStego.py`.
