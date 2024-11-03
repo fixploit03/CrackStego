@@ -90,31 +90,31 @@ else:
 
 # Banner program 
 print(f"""
-             {k}╔═╗╦═╗╔═╗╔═╗╦╔═  ╔═╗╔╦╗╔═╗╔═╗╔═╗{r}
-             {k}║  ╠╦╝╠═╣║  ╠╩╗  ╚═╗ ║ ║╣ ║ ╦║ ║{r}
-             {k}╚═╝╩╚═╩ ╩╚═╝╩ ╩  ╚═╝ ╩ ╚═╝╚═╝╚═╝{r}
+             ╔═╗╦═╗╔═╗╔═╗╦╔═  ╔═╗╔╦╗╔═╗╔═╗╔═╗
+             ║  ╠╦╝╠═╣║  ╠╩╗  ╚═╗ ║ ║╣ ║ ╦║ ║
+             ╚═╝╩╚═╩ ╩╚═╝╩ ╩  ╚═╝ ╩ ╚═╝╚═╝╚═╝
 
-{p}[{k}*{p}] Program   : {k}CrackStego{r}
-{p}[{k}*{p}] Deskripsi : {k}Program Python untuk meng-crack file stego{r}
-{p}[{k}*{p}] Pembuat   : {k}fixploit03{r}
-{p}[{k}*{p}] Github    : {k}https://github.com/fixploit03/CrackStego/{r}
-{p}[{k}*{p}] Team      : {k}ArSec (Arjuna Security){r}
+[*] Program   : CrackStego
+[*] Deskripsi : Program Python untuk meng-crack file stego
+[*] Pembuat   : fixploit03
+[*] Github    : https://github.com/fixploit03/CrackStego/
+[*] Team      : ArSec (Arjuna Security)
 """)
 
 # Meminta nama file stego dari pengguna
 while True:
     try:
-        file_stego = input(f"{p}[{k}#{p}] Masukkan nama file stego : {k}")
-        print(f"{p}[{k}*{p}] Mengecek file stego '{file_stego}'...{r}")
+        file_stego = input("[#] Masukkan nama file stego : ")
+        print(f"[*] Mengecek file stego '{file_stego}'...")
         time.sleep(3)
         if not file_stego:
-            print(f"{p}[{k}-{p}] File stego tidak boleh kosong.{r}")
+            print("[-] File stego tidak boleh kosong.")
             continue 
         if not os.path.isfile(file_stego):
-            print(f"{p}[{k}-{p}] File stego '{file_stego}' tidak ditemukan.{r}")
+            print(f"[-] File stego '{file_stego}' tidak ditemukan.")
             continue
         if not file_stego.endswith((".jpg", ".jpeg", ".wav", ".au")):
-            print(f"{p}[{k}-{p}] File '{file_stego}' bukan file stego.{r}")
+            print(f"[-] File '{file_stego}' bukan file stego.")
             continue
         perintah_cek_file_stego = f"strings {file_stego}"
         try:
@@ -122,46 +122,46 @@ while True:
             if cek_file_stego.returncode == 0:
                 pola_file_steghide = r"%&'\(\)\*456789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz\n\s*#3R\n&'\(\)\*56789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz"
                 if re.search(pola_file_steghide, cek_file_stego.stdout):
-                    print(f"{p}[{k}+{p}] File stego '{file_stego}' ditemukan.{r}")
+                    print(f"[+] File stego '{file_stego}' ditemukan.")
                     break
                 else:
-                    print(f"{p}[{k}-{p}] File '{file_stego}' bukan file stego.{r}")
+                    print(f"[-] File '{file_stego}' bukan file stego.")
                     continue 
         except KeyboardInterrupt:
-            print(f"\n{p}[{k}-{p}] Program dihentikan oleh pengguna.{r}")
+            print("\n[-] Program dihentikan oleh pengguna.")
             exit(1)
         except Exception as e:
-            print(f"{p}[{k}-{p}] Terjadi kesalahan: {e}{r}")
+            print(f"[-] Terjadi kesalahan: {e}")
             exit(1)
     except KeyboardInterrupt:
-        print(f"\n{p}[{k}-{p}] Program dihentikan oleh pengguna.{r}")
+        print("\n[-] Program dihentikan oleh pengguna.")
         exit(1)
     except Exception as e:
-        print(f"\n{p}[{m}-{p}] Terjadi kesalahan: {e}.{r}")
+        print(f"\n[-] Terjadi kesalahan: {e}.")
         exit(1)
 
 # Meminta nama file wordlist dari pengguna
 while True:
     try:
-        file_wordlist = input(f"{p}[{k}#{p}] Masukkan nama file wordlist : {k}")
-        print(f"{p}[{k}*{p}] Mengecek file wordlist '{file_wordlist}'...{r}")
+        file_wordlist = input("[#] Masukkan nama file wordlist : ")
+        print(f"[*] Mengecek file wordlist '{file_wordlist}'...")
         time.sleep(3)
         if not file_wordlist:
-            print(f"{p}[{k}-{p}] File wordlist tidak boleh kosong.{r}")
+            print("[-] File wordlist tidak boleh kosong.")
             continue 
         if not os.path.isfile(file_wordlist):
-            print(f"{p}[{k}-{p}] File wordlist '{file_wordlist}' tidak ditemukan.{r}")
+            print(f"[-] File wordlist '{file_wordlist}' tidak ditemukan.")
             continue
         if not file_wordlist.endswith((".txt", ".lst")):
-            print(f"{p}[{k}-{p}] File '{file_wordlist}' bukan file wordlist.{r}")
+            print(f"[-] File '{file_wordlist}' bukan file wordlist.")
             continue
-        print(f"{p}[{k}+{p}] File wordlist '{file_wordlist}' ditemukan.{r}")
+        print(f"[+] File wordlist '{file_wordlist}' ditemukan.")
         break
     except KeyboardInterrupt:
-        print(f"\n{p}[{k}-{p}] Program dihentikan oleh pengguna.{r}")
+        print("\n[-] Program dihentikan oleh pengguna.")
         exit(1)
     except Exception as e:
-        print(f"\n{p}[{k}-{p}] Terjadi kesalahan: {e}.{r}")
+        print(f"\n[-] Terjadi kesalahan: {e}.")
         exit(1)
 
 print("")
@@ -174,9 +174,9 @@ try:
         daftar_kata_sandi = fw.read().splitlines()
         jumlah_kata_sandi = len(daftar_kata_sandi)
         waktu_mulai = datetime.now()
-        print(f"{p}[{k}+{p}] Jumlah kata sandi yang terdapat dalam file wordlist : {k}{jumlah_kata_sandi}{r}")
-        input(f"\n{p}Tekan [{k}Enter{p}] untuk memulai proses cracking...{r}")
-        print(f"\n{p}[{k}*{p}] Dimulai pada : {k}{waktu_mulai.strftime('%d-%m-%Y %H:%M:%S')}{r}\n")
+        print(f"[+] Jumlah kata sandi yang terdapat dalam file wordlist : {jumlah_kata_sandi}")
+        input("\nTekan [Enter] untuk memulai proses cracking...")
+        print(f"\n[*] Dimulai pada : {waktu_mulai.strftime('%d-%m-%Y %H:%M:%S')}\n")
         time.sleep(3)
         for kata_sandi in daftar_kata_sandi:
             perintah_crack_file_stego = f"steghide extract -sf {file_stego} -p {kata_sandi} -f"
@@ -191,24 +191,24 @@ try:
                         if cocok:
                             nama_file_tersembunyi = cocok.group(1).strip()
                     waktu_akhir = datetime.now()
-                    print(f"{p}[{k}+{p}] Kata sandi ditemukan : {k}{kata_sandi}{r}") 
+                    print(f"[+] Kata sandi ditemukan : {kata_sandi}") 
                     if os.path.isfile(nama_file_tersembunyi):
-                        print(f"{p}[{k}+{p}] File yang disembunyikan : {k}{nama_file_tersembunyi}{r}") 
-                    print(f"\n{p}[{k}*{p}] Berakhir pada : {k}{waktu_akhir.strftime('%d-%m-%Y %H:%M:%S')}{r}")
+                        print(f"[+] File yang disembunyikan : {nama_file_tersembunyi}") 
+                    print(f"\n[*] Berakhir pada : {waktu_akhir.strftime('%d-%m-%Y %H:%M:%S')}")
                     kata_sandi_ditemukan = True
                     break
                 else:
-                    print(f"{p}[{k}-{p}] Kata sandi salah : {k}{kata_sandi}{r}")
+                    print(f"[-] Kata sandi salah : {kata_sandi}")
             except KeyboardInterrupt:
-                print(f"\n{p}[{k}-{p}] Program dihentikan oleh pengguna.{r}")
+                print("\n[-] Program dihentikan oleh pengguna.")
                 exit(1)
             except Exception as e:
-                print(f"\n{p}[{k}-{p}] Terjadi kesalahan: {e}.{r}")
+                print(f"\n[-] Terjadi kesalahan: {e}.")
                 exit(1)
         if not kata_sandi_ditemukan:
             waktu_akhir = datetime.now()
-            print(f"{p}[{k}-{p}] Kata sandi tidak ditemukan, coba file Wordlist yang lain.{r}")
-            print(f"\n{p}[{k}*{p}] Berakhir pada : {k}{waktu_akhir.strftime('%d-%m-%Y %H:%M:%S')}{r}")
+            print("[-] Kata sandi tidak ditemukan, coba file Wordlist yang lain.")
+            print(f"\n[*] Berakhir pada : {waktu_akhir.strftime('%d-%m-%Y %H:%M:%S')}")
 except Exception as e:
-    print(f"\n{p}[{k}-{p}] Terjadi kesalahan: {e}.{r}")
+    print(f"\n[-] Terjadi kesalahan: {e}.")
     exit(1)
