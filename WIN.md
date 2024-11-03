@@ -18,6 +18,14 @@ Berikut adalah persyaratan yang diperlukan untuk menjalankan program CrackStego.
 - MSYS2 : https://www.msys2.org/
 - Steghide : https://steghide.sourceforge.net/
 
+## Link Tutorial
+
+- Instal Python : https://youtu.be/0DQsjE8vMpc?si=WBg1WN50CYYNtTdn
+- Instal Git : https://youtu.be/5YsC18rxdlE?si=silya9B7Psx4tgY2
+- Instal MSYS2 : https://youtu.be/x5DDTzYBXN0?si=EzwQch18JOlIBoCA
+- Instal Steghide : https://youtu.be/CYjc3Ib12EQ?si=j6NMEc3-TxzUAu2f
+- Menambahkan PATH Enviroment Variabel : https://youtu.be/gb9e3m98avk?si=OMLblcm_fzxXFMJl
+
 ## Instalasi  
 
 1. Unduh dan instal semua persyaratan yang diperlukan.
