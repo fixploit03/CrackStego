@@ -1,2 +1,31 @@
-msys2: https://www.msys2.org/
-steghide: https://steghide.sourceforge.net/
+Dibuat [3-11-2024]
+
+Persyaratan 
+-----------
+- Python
+- Git
+- MSYS2
+- Steghide
+
+Link download
+-------------
+- Python : https://www.python.org/
+- Git : https://git-scm.com/downloads/win
+- MSYS2 : https://www.msys2.org/
+- Steghide : https://steghide.sourceforge.net/
+
+Cara Instal CrackStego
+----------------------
+1. Unduh dan instal semua persyaratan yang diperlukan.
+2. Tambahkan semua folder persyaratan ke variabel lingkungan PATH Windows.
+3. Buka CMD.
+4. Ketikkan perintah git clone https://github.com/fixploit03/CrackStego/.
+5. Ketikkan perintah cd CrackStego.
+6. Selesai.
+
+Cara menjalankan CrackStego
+---------------------------
+python3 CrackStego.py
+
+- fixploit03 -
+
