@@ -30,6 +30,8 @@ Berikut adalah persyaratan yang diperlukan untuk menjalankan program CrackStego.
 8. Ketikkan perintah `cd CrackStego`.
 9. Selesai.
 
+> Jika Anda mengalami kesulitan atau masalah saat proses instalasi, silakan buka [Issue]().
+
 ## Menjalankan
 
 Untuk menjalankan program CrackStego, cukup ketikkan perintah `python3 CrackStego.py`.
