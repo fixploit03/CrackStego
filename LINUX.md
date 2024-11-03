@@ -1,6 +1,6 @@
-# Cara Instal CrackStego di Linux 
+# Cara Instal CrackStego di Linux Debian 
 
-Berikut ini adalah persyaratan dan langkah-langkah untuk menginstal CrackStego di sistem operasi Linux.
+Berikut ini adalah persyaratan dan langkah-langkah untuk menginstal CrackStego di sistem operasi Linux Debian.
 
 ## Persyaratan 
 
