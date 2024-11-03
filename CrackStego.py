@@ -30,7 +30,7 @@ untuk selalu mematuhi peraturan dan etika yang berlaku di wilayah Anda.
 time.sleep(3)
 
 # Mengecek sistem operasi
-print(f"[*] Mengecek sistem operasi...")
+print("[*] Mengecek sistem operasi...")
 time.sleep(3)
 sistem_operasi = platform.system()
 if sistem_operasi == "Linux":
@@ -89,7 +89,7 @@ else:
     exit(1)
 
 # Banner program 
-print(f"""
+print("""
              ╔═╗╦═╗╔═╗╔═╗╦╔═  ╔═╗╔╦╗╔═╗╔═╗╔═╗
              ║  ╠╦╝╠═╣║  ╠╩╗  ╚═╗ ║ ║╣ ║ ╦║ ║
              ╚═╝╩╚═╩ ╩╚═╝╩ ╩  ╚═╝ ╩ ╚═╝╚═╝╚═╝
