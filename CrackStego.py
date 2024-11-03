@@ -72,6 +72,7 @@ try:
     if cek_file_binutils.returncode == 0:
         print("[+] Binutils sudah terinstal.")
         input("\nTekan [Enter] untuk melanjutkan...")
+        print("")
     else:
         print("[-] Binutils belum terinstal.")
         if sistem_operasi == "Linux":
