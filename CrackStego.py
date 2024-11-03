@@ -86,27 +86,6 @@ except Exception as e:
     print(f"[-] Terjadi kesalahan: {e}.")
     exit(1)
 
-if sistem_operasi == "Linux":
-    os.system("clear")
-elif sistem_operasi == "Windows":
-    os.system("cls")
-else:
-    print("[-] Sistem operasi Anda tidak mendukung untuk menjalankan program CrackStego.")
-    exit(1)
-
-# Banner program 
-print("""
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-@                                                            @
-@               ╔═╗╦═╗╔═╗╔═╗╦╔═╔═╗╔╦╗╔═╗╔═╗╔═╗               @
-@               ║  ╠╦╝╠═╣║  ╠╩╗╚═╗ ║ ║╣ ║ ╦║ ║               @
-@               ╚═╝╩╚═╩ ╩╚═╝╩ ╩╚═╝ ╩ ╚═╝╚═╝╚═╝               @
-@         Program Python untuk Meng-Crack File Stego         @
-@          https://github.com/fixploit03/CrackStego          @
-@                                                            @
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-""")
-
 # Meminta nama file stego dari pengguna
 while True:
     try:
