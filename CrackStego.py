@@ -87,20 +87,23 @@ except Exception as e:
     print(f"[-] Terjadi kesalahan: {e}.")
     exit(1)
 
+# Membersihkan layar terminal 
 if sistem_operasi == "Linux":
     os.system("clear")
 elif sistem_operasi == "Windows":
     os.system("cls")
 
+# Banner program 
 print("""
- _______ _______ _______ _______ ___ ___  _______ _______ _______ _______ _______    
-|   _   |   _   |   _   |   _   |   Y   )|   _   |       |   _   |   _   |   _   |   
-|.  1___|.  l   |.  1   |.  1___|.  1  / |   1___|.|   | |.  1___|.  |___|.  |   |   
-|.  |___|.  _   |.  _   |.  |___|.  _  \ |____   `-|.  |-|.  __)_|.  |   |.  |   |   
-|:  1   |:  |   |:  |   |:  1   |:  |   \|:  1   | |:  | |:  1   |:  1   |:  1   |   
-|::.. . |::.|:. |::.|:. |::.. . |::.| .  |::.. . | |::.| |::.. . |::.. . |::.. . |   
-`-------`--- ---`--- ---`-------`--- ---'`-------' `---' `-------`-------`-------'
-                                         https://github.com/fixploit03/CrackStego/
+╔═╗╦═╗╔═╗╔═╗╦╔═╔═╗╔╦╗╔═╗╔═╗╔═╗
+║  ╠╦╝╠═╣║  ╠╩╗╚═╗ ║ ║╣ ║ ╦║ ║
+╚═╝╩╚═╩ ╩╚═╝╩ ╩╚═╝ ╩ ╚═╝╚═╝╚═╝
+
+[*] Program   : CrackStego
+[*] Deskripsi : Program Python untuk meng-crack file stego
+[*] Pembuat   : fixploit03
+[*] Github    : https://github.com/fixploit03/CrackStego/
+[*] Team      : ArSec (Arjuna Security)
 """)
 
 # Meminta nama file stego dari pengguna
