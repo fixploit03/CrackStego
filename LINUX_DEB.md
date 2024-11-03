@@ -8,7 +8,6 @@ Berikut adalah persyaratan yang diperlukan untuk menjalankan program CrackStego.
 
 - Python
 - Git
-- MSYS2
 - Steghide
 
 ## Instalasi  
