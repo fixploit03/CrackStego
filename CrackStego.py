@@ -44,7 +44,7 @@ else:
 # Mengecek Steghide
 print("[*] Mengecek Steghide...")
 time.sleep(3)
-perintah_cek_steghide = f"steghide --version"
+perintah_cek_steghide = "steghide --version"
 try:
     cek_file_steghide = subprocess.run(perintah_cek_steghide, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     if cek_file_steghide.returncode == 0:
@@ -66,7 +66,7 @@ except Exception as e:
 # Mengecek Binutils
 print("[*] Mengecek Binutils...")
 time.sleep(3)
-perintah_cek_binutils = f"ld --version"
+perintah_cek_binutils = "ld --version"
 try:
     cek_file_binutils = subprocess.run(perintah_cek_binutils, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     if cek_file_binutils.returncode == 0:
