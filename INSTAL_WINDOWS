@@ -1,5 +1,6 @@
-Dibuat [3-11-2024]
-
+Cara Instal CrackStego di Windows 
+Dibuat pada : 3-10-2024
+Pembuat : fixploit03 
 Persyaratan 
 -----------
 - Python
@@ -19,8 +20,8 @@ Cara Instal CrackStego
 1. Unduh dan instal semua persyaratan yang diperlukan.
 2. Tambahkan semua folder persyaratan ke variabel lingkungan PATH Windows.
 3. Buka CMD.
-4. Ketikkan perintah git clone https://github.com/fixploit03/CrackStego/.
-5. Ketikkan perintah cd CrackStego.
+4. Ketikkan perintah 'git clone https://github.com/fixploit03/CrackStego/'.
+5. Ketikkan perintah 'cd CrackStego'.
 6. Selesai.
 
 Cara menjalankan CrackStego
