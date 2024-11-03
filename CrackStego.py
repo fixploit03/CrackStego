@@ -87,6 +87,10 @@ except Exception as e:
     print(f"[-] Terjadi kesalahan: {e}.")
     exit(1)
 
+if sistem_operasi == "Linux":
+    os.system("clear")
+elif sistem_operasi == "Windows":
+    os.system("cls")
 # Meminta nama file stego dari pengguna
 while True:
     try:
