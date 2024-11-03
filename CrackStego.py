@@ -100,7 +100,7 @@ print("""
 @               ╔═╗╦═╗╔═╗╔═╗╦╔═╔═╗╔╦╗╔═╗╔═╗╔═╗               @
 @               ║  ╠╦╝╠═╣║  ╠╩╗╚═╗ ║ ║╣ ║ ╦║ ║               @
 @               ╚═╝╩╚═╩ ╩╚═╝╩ ╩╚═╝ ╩ ╚═╝╚═╝╚═╝               @
-@               Program Python untuk meng-crack file steg      @
+@         Program Python untuk meng-crack file stego      @
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 [*] Program   : CrackStego                                 [*]
