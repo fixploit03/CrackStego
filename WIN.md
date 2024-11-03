@@ -22,12 +22,13 @@ Berikut adalah persyaratan yang diperlukan untuk menjalankan program CrackStego.
 
 1. Unduh dan instal semua persyaratan yang diperlukan.
 2. Tambahkan semua folder persyaratan ke variabel lingkungan PATH Windows.
-3. Buka CMD.
+3. Buka MSYS2.
 4. Ketikkan perintah `pacman -Syu`.
 5. Ketikkan perintah `pacman -S binutils`.
-6. Ketikkan perintah `git clone https://github.com/fixploit03/CrackStego/`.
-7. Ketikkan perintah `cd CrackStego`.
-8. Selesai.
+6. Buka CMD.
+7. Ketikkan perintah `git clone https://github.com/fixploit03/CrackStego/`.
+8. Ketikkan perintah `cd CrackStego`.
+9. Selesai.
 
 ## Menjalankan
 
