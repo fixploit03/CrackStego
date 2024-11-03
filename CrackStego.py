@@ -40,6 +40,8 @@ time.sleep(3)
 sistem_operasi = platform.system()
 if sistem_operasi == "Linux":
     print(f"{p}[{k}+{p}] Sistem operasi : {k}{sistem_operasi}{r}")
+elif sistem_operasi == "Windows":
+    print(f"{p}[{k}+{p}] Sistem operasi : {k}{sistem_operasi}{r}")
 else:
     print(f"{p}[{k}-{p}] Sistem operasi Anda tidak mendukung untuk menjalankan program CrackStego.{r}")
     exit(1)
@@ -83,8 +85,13 @@ except Exception as e:
     print(f"{p}[{k}-{p}] Terjadi kesalahan: {e}{r}")
     exit(1)
 
-# Membersihkan layar terminal
-os.system("clear")
+if sistem_operasi == "Linux":
+    os.system("clear")
+elif sistem_operasi == "Windows":
+    os.system("cls")
+else:
+    print(f"{p}[{k}-{p}] Sistem operasi Anda tidak mendukung untuk menjalankan program CrackStego.{r}")
+    exit(1)
 
 # Banner program 
 print(f"""
