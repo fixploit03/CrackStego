@@ -57,7 +57,7 @@ except KeyboardInterrupt:
     print("\n[-] Program dihentikan oleh pengguna.")
     exit(1)
 except Exception as e:
-    print(f"[-] Terjadi kesalahan: {e}")
+    print(f"[-] Terjadi kesalahan: {e}.")
     exit(1)
 
 # Mengecek Binutils
@@ -77,7 +77,7 @@ except KeyboardInterrupt:
     print("\n[-] Program dihentikan oleh pengguna.")
     exit(1)
 except Exception as e:
-    print(f"[-] Terjadi kesalahan: {e}")
+    print(f"[-] Terjadi kesalahan: {e}.")
     exit(1)
 
 if sistem_operasi == "Linux":
@@ -131,7 +131,7 @@ while True:
             print("\n[-] Program dihentikan oleh pengguna.")
             exit(1)
         except Exception as e:
-            print(f"[-] Terjadi kesalahan: {e}")
+            print(f"[-] Terjadi kesalahan: {e}.")
             exit(1)
     except KeyboardInterrupt:
         print("\n[-] Program dihentikan oleh pengguna.")
