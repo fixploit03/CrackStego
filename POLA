@@ -1,0 +1,8 @@
+Berikut ini pola file steghide yang Saya temukan meggunakan utilitas string:
+
+1. Pola #3R
++-----------------------------------------------+
+| %&'()*456789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz |
+|         #3R                                   |
+| &'()*56789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz   |
++-----------------------------------------------+
