@@ -54,7 +54,7 @@ try:
         if sistem_operasi == "Linux":
             print("[-] Instal dengan mengetikkan perintah 'sudo apt-get install steghide'.")
         elif sistem_operasi == "Windows":
-            print("[-] Instal dari 'https://steghide.sourceforge.net/download.php'.")
+            print("[-] Silahkan instal dari 'https://steghide.sourceforge.net/download.php'.")
         exit(1)
 except KeyboardInterrupt:
     print("\n[-] Program dihentikan oleh pengguna.")
@@ -78,7 +78,7 @@ try:
         if sistem_operasi == "Linux":
             print("[-] Instal dengan mengetikkan perintah 'sudo apt-get install binutils'.")
         elif sistem_operasi == "Windows":
-            print("[-] Instal dari 'https://www.msys2.org/'.")
+            print("[-] Silahkan instal dari 'https://www.msys2.org/'.")
         exit(1)
 except KeyboardInterrupt:
     print("\n[-] Program dihentikan oleh pengguna.")
