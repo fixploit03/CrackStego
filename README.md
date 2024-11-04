@@ -2,6 +2,16 @@
 
 CrackStego adalah program Python yang dirancang untuk meng-crack file stego yang dihasilkan oleh alat Steghide dengan menggunakan teknik serangan Dictionary Attack.
 
+## Fitur Utama 
+
+1. **Dictionary Attack**:  
+   Menggunakan file kamus (wordlist) untuk meretas file stego.
+2. **Antarmuka Sederhana**:  
+   Mudah digunakan dengan antarmuka berbasis teks. Pengguna dapat dengan cepat memahami cara menjalankan program tanpa memerlukan pengalaman teknis yang mendalam.
+3. **Multi-Platform**:  
+   Tersedia untuk berbagai sistem operasi, termasuk Android, Windows, dan distribusi Linux (Debian dan Arch).
+
+
 ## Instalasi
 
 - Android : https://github.com/fixploit03/CrackStego/blob/main/ANDROID.md
