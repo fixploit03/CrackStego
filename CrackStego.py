@@ -212,7 +212,7 @@ try:
                 exit(1)
         if not kata_sandi_ditemukan:
             waktu_akhir = datetime.now()
-            print("[-] Kata sandi tidak ditemukan, coba file Wordlist yang lain.")
+            print(f"[-] Kata sandi tidak ditemukan dalam file wordlist {file_wordlist}.")
             print(f"\n[*] Berakhir pada : {waktu_akhir.strftime('%d-%m-%Y %H:%M:%S')}")
 except Exception as e:
     print(f"\n[-] Terjadi kesalahan: {e}.")
