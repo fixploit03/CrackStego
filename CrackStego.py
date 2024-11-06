@@ -196,8 +196,12 @@ while True:
         if not file_wordlist.endswith((".txt", ".lst")):
             print(f"[-] File '{file_wordlist}' bukan file wordlist.")
             continue
-        print(f"[+] File wordlist '{file_wordlist}' ditemukan.")
-        break
+        if os.stat(file_wordlist)st_size == 0:
+            print("[-] File wordlist '{file_wordlist}' kosong.")
+            continue 
+        else:
+            print(f"[+] File wordlist '{file_wordlist}' ditemukan.")
+            break
     except KeyboardInterrupt:
         print("\n[-] Program dihentikan oleh pengguna.")
         exit(1)
