@@ -118,8 +118,8 @@ while True:
         if not os.path.isfile(file_stego):
             print(f"[-] File stego '{file_stego}' tidak ditemukan.")
             continue
-        if not file_stego.endswith((".jpg", ".jpeg", ".wav", ".au")):
-            print(f"[-] File '{file_stego}' bukan file stego.")
+        if not file_stego.endswith((".jpg", ".jpeg", ".bmp", ".wav", ".au")):
+            print(f"[-] File '{file_stego}' bukan fil stego.")
             continue
         perintah_cek_file_stego = f"strings {file_stego}"
         try:
@@ -127,8 +127,44 @@ while True:
             if cek_file_stego.returncode == 0:
                 pola_file_steghide = r"%&'\(\)\*456789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz\n\s*#3R\n&'\(\)\*56789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz"
                 if re.search(pola_file_steghide, cek_file_stego.stdout):
-                    print(f"[+] File stego '{file_stego}' ditemukan.")
-                    break
+                    perintah_cek_enkripsi_file_stego = f"steghide extract -sf {file_stego} -p '' -f"
+                    try:
+                        cek_enkripsi_file_stego = subprocess.run(perintah_cek_enkripsi_file_stego, shell=True, capture_output=True, text=True)
+                        if cek_enkripsi_file_stego.returncode ==0:
+                            perintah_mencari_file_tersembunyi = f"steghide info {file_stego} -p ''"
+                            try:
+                                mencari_file_tersembunyi = subprocess.run(perintah_mencari_file_tersembunyi, shell=True, capture_output=True, text=True)
+                                if mencari_file_tersembunyi.returncode == 0:
+                                    pola = r'embedded file "(.*?)":'
+                                    cocok = re.search(pola, mencari_file_tersembunyi.stdout)
+                                    if cocok:
+                                        nama_file_tersembunyi = cocok.group(1).strip()
+                                        if os.path.isfile(nama_file_tersembunyi):
+                                            try:
+                                                os.remove(nama_file_tersembunyi)
+                                                print(f"[-] File stego '{file_stego}' tidak dilindungi oleh kata sandi.")
+                                                continue
+                                            except KeyboardInterrupt:
+                                                print("\n[-] Program dihentikan oleh pengguna.")
+                                                exit(1)
+                                            except Exception as e:
+                                                print(f"[-] Terjadi kesalahan: {e}.")
+                                            exit(1)
+                            except KeyboardInterrupt:
+                                print("\n[-] Program dihentikan oleh pengguna.")
+                                exit(1)
+                            except Exception as e:
+                                print(f"[-] Terjadi kesalahan: {e}.")
+                                exit(1)
+                        else:
+                            print(f"[+] File stego '{file_stego}' ditemukan.")
+                            break
+                    except KeyboardInterrupt:
+                        print("\n[-] Program dihentikan oleh pengguna.")
+                        exit(1)
+                    except Exception as e:
+                        print(f"[-] Terjadi kesalahan: {e}.")
+                        exit(1)
                 else:
                     print(f"[-] File '{file_stego}' bukan file stego.")
                     continue 
@@ -195,13 +231,13 @@ try:
                         cocok = re.search(pola, mencari_file_tersembunyi.stdout)
                         if cocok:
                             nama_file_tersembunyi = cocok.group(1).strip()
-                    waktu_akhir = datetime.now()
-                    print(f"[+] Kata sandi ditemukan : {kata_sandi}") 
-                    if os.path.isfile(nama_file_tersembunyi):
-                        print(f"[+] File yang disembunyikan : {nama_file_tersembunyi}") 
-                    print(f"\n[*] Berakhir pada : {waktu_akhir.strftime('%d-%m-%Y %H:%M:%S')}")
-                    kata_sandi_ditemukan = True
-                    break
+                            waktu_akhir = datetime.now()
+                            print(f"[+] Kata sandi ditemukan : {kata_sandi}") 
+                            if os.path.isfile(nama_file_tersembunyi):
+                                print(f"[+] File yang disembunyikan : {nama_file_tersembunyi}") 
+                                print(f"\n[*] Berakhir pada : {waktu_akhir.strftime('%d-%m-%Y %H:%M:%S')}")
+                                kata_sandi_ditemukan = True
+                                break
                 else:
                     print(f"[-] Kata sandi salah : {kata_sandi}")
             except KeyboardInterrupt:
