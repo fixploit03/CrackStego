@@ -119,7 +119,7 @@ while True:
             print(f"[-] File stego '{file_stego}' tidak ditemukan.")
             continue
         if not file_stego.endswith((".jpg", ".jpeg", ".bmp", ".wav", ".au")):
-            print(f"[-] File '{file_stego}' bukan fil stego.")
+            print(f"[-] File '{file_stego}' bukan file stego.")
             continue
         perintah_cek_file_stego = f"strings {file_stego}"
         try:
