@@ -220,6 +220,8 @@ try:
         print(f"\n[*] Dimulai pada : {waktu_mulai.strftime('%d-%m-%Y %H:%M:%S')}\n")
         time.sleep(3)
         for kata_sandi in daftar_kata_sandi:
+            if kata_sandi == "":
+                continue 
             perintah_crack_file_stego = f"steghide extract -sf {file_stego} -p {kata_sandi} -f"
             try:
                 crack_file_stego = subprocess.run(perintah_crack_file_stego, shell=True, capture_output=True, text=True)
