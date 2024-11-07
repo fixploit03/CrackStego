@@ -1,6 +1,6 @@
 # Cara Instal CrackStego di Android (Termux)
 
-Berikut ini adalah persyaratan dan langkah-langkah untuk menginstal CrackStego di sistem operasi Android.
+Berikut ini adalah persyaratan dan langkah-langkah untuk menginstal CrackStego di sistem operasi Android (Tetmux).
 
 ## Persyaratan 
 
