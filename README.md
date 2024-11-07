@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="CrackStego" src="https://github.com/fixploit03/CrackStego/blob/main/ico.jpg" height="140" />
+  <img alt="CrackStego" src="https://github.com/fixploit03/CrackStego/blob/main/IC.jpg" height="140" />
   <p align="center">
     <a href="https://github.com/fixploit03/CrackStego/releases"><img alt="Release" src="https://img.shields.io/badge/versi-1.0.0-blue"></a>
     <a href="https://github.com/fixploit03/CrackStego/blob/main/LICENSE"><img alt="Software License" src="https://img.shields.io/badge/lisensi-MIT-green"></a>
