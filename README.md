@@ -9,7 +9,6 @@
   </p>
 </p>
 
-
 # CrackStego
 
 `CrackStego` adalah program Python yang dirancang untuk meng-crack file stego yang dihasilkan oleh alat [Steghide](https://steghide.sourceforge.net/) dengan menggunakan teknik serangan [Dictionary Attack](https://www.asdf.id/definisi-dictionary-attack-adalah/).
