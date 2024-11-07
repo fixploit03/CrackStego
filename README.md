@@ -43,4 +43,4 @@ Program ini dilisensikan di bawah [Lisensi MIT](https://github.com/fixploit03/Cr
 
 ## Laporan Bug
 
-Jika Anda menemukan bug atau masalah dalam program ini, silakan laporkan melalui [Issues]() di repositori GitHub. Sertakan deskripsi yang jelas mengenai masalah yang Anda temui.
+Jika Anda menemukan bug atau masalah dalam program ini, silakan laporkan melalui [Issues](https://github.com/fixploit03/CrackStego/issues) di repositori GitHub. Sertakan deskripsi yang jelas mengenai masalah yang Anda temui.
