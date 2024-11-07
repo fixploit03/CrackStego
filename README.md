@@ -39,4 +39,4 @@ untuk selalu mematuhi peraturan dan etika yang berlaku di wilayah Anda.
 
 ## Lisensi 
 
-Program ini dilisensikan di bawah [Lisensi MIT]().
+Program ini dilisensikan di bawah [Lisensi MIT](https://github.com/fixploit03/CrackStego/blob/main/LICENSE).
