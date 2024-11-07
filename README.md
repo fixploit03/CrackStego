@@ -32,18 +32,15 @@ Berikut ini adalah ilustrasi (gambar) flowchart yang menunjukkan cara kerja Prog
 2. **Antarmuka Sederhana**:  
    Program menggunakan antarmuka teks yang sederhana dengan instruksi yang jelas untuk pengguna, termasuk penggunaan `input()` untuk masukan pengguna dan berbagai pesan status yang informatif.
 3. **Multi-Platform**:  
-   Tersedia untuk berbagai sistem operasi, termasuk Android, Windows, dan distribusi Linux (Debian dan Arch).
+   Tersedia untuk berbagai sistem operasi, termasuk Android, Windows, dan Linux.
 4. **Error Handling**:  
    Program dilengkapi dengan penanganan kesalahan yang memadai, termasuk menghentikan program jika terjadi kesalahan atau interupsi dari pengguna.
 
 ## Instalasi
 
-- Android : https://github.com/fixploit03/CrackStego/blob/main/ANDROID.md
-- Windows : https://github.com/fixploit03/CrackStego/blob/main/WIN.md
-- Linux
-  - Debian : https://github.com/fixploit03/CrackStego/blob/main/LINUX_DEB.md
-  - Arch : https://github.com/fixploit03/CrackStego/blob/main/ARCH_LINUX.md
-
+- **Android (Termux)** :   https://github.com/fixploit03/CrackStego/blob/main/ANDROID.md
+- **Windows**:   https://github.com/fixploit03/CrackStego/blob/main/WIN.md
+- **Linux (Debian/Ubuntu)** :   https://github.com/fixploit03/CrackStego/blob/main/LINUX_DEB.md
 ## Demonstrasi
 
 ![](https://github.com/fixploit03/CrackStego/blob/main/demonstrasi.gif)
