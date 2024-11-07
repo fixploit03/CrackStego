@@ -18,7 +18,7 @@ untuk selalu mematuhi peraturan dan etika yang berlaku di wilayah Anda.
 
 Berikut ini adalah ilustrasi (gambar) flowchart yang menunjukkan cara kerja Program CrackStego untuk meng-crack file stego.
 
-![](https://github.com/fixploit03/CrackStego/blob/main/FLOW.jpg)
+![](https://github.com/fixploit03/CrackStego/blob/main/FL.jpg)
 
 ## Fitur Utama 
 
