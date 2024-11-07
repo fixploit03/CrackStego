@@ -13,10 +13,11 @@
 1. **Dictionary Attack**:  
    Menggunakan file kamus (wordlist) untuk meng-crack file stego.
 2. **Antarmuka Sederhana**:  
-   Mudah digunakan dengan antarmuka berbasis teks. Pengguna dapat dengan cepat memahami cara menjalankan program tanpa memerlukan pengalaman teknis yang mendalam.
+   Program menggunakan antarmuka teks yang sederhana dengan instruksi yang jelas untuk pengguna, termasuk penggunaan `input()` untuk masukan pengguna dan berbagai pesan status yang informatif.
 3. **Multi-Platform**:  
    Tersedia untuk berbagai sistem operasi, termasuk Android, Windows, dan distribusi Linux (Debian dan Arch).
-
+4. **Error Handling**:  
+   Program dilengkapi dengan penanganan kesalahan yang memadai, termasuk menghentikan program jika terjadi kesalahan atau interupsi dari pengguna.
 
 ## Instalasi
 
