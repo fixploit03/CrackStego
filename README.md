@@ -1,6 +1,6 @@
 # CrackStego
 
-[![Versi Python](https://img.shields.io/badge/versi-python%20%E2%89%A5%203.6-blue.svg)](https://www.python.org/)
+[![Python](https://img.shields.io/badge/python-%E2%89%A5%203.6-blue.svg)](https://www.python.org/)
 [![Dikembangkan di Kali Linux](https://img.shields.io/badge/Dikembangkan%20di-Kali%20Linux-blueviolet)](https://www.kali.org/)
 [![License](https://img.shields.io/badge/lisensi-MIT-green)](https://github.com/fixploit03/CrackStego/blob/main/LICENSE)
 [![Version](https://img.shields.io/badge/versi-1.0.0-blue)](https://github.com/fixploit03/CrackStego/releases)
