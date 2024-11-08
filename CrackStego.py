@@ -42,7 +42,24 @@ if sistem_operasi == "Linux":
             if re.search(r"Android", hasil_mencari_jenis_sistem_operasi):
                 print(f"[+] Sistem operasi : {hasil_mencari_jenis_sistem_operasi}")
             elif re.search(r"GNU/Linux", hasil_mencari_jenis_sistem_operasi):
-                print(f"[+] Sistem operasi : {hasil_mencari_jenis_sistem_operasi}")
+                perintah_mencari_jenis_distribusi = "cat /etc/os-release"
+                try:
+                    mencari_jenis_distribusi = subprocess.run(perintah_mencari_jenis_distribusi, shell=True, capture_output=True, text=True)
+                    if mencari_jenis_distribusi.returncode == 0:
+                        hasil_mencari_jenis_distribusi = mencari_jenis_distribusi.stdout.strip()
+                        if re.search(r"ubuntu", hasil_mencari_jenis_distribusi):
+                            print(f"[+] Sistem operasi : {hasil_mencari_jenis_sistem_operasi}")
+                        elif re.search(r"debian", hasil_mencari_jenis_distribusi):
+                            print(f"[+] Sistem operasi : {hasil_mencari_jenis_sistem_operasi}")
+                        else:
+                            print("[-] Sistem operasi Anda tidak mendukung untuk menjalankan program CrackStego.")
+                            exit(1)
+                except KeyboardInterrupt:
+                    print("\n[-] Program dihentikan oleh pengguna.")
+                    exit(1)
+                except Exception as e:
+                    print(f"[-] Terjadi kesalahan: {e}.")
+                    exit(1)
             else:
                 print("[-] Sistem operasi Anda tidak mendukung untuk menjalankan program CrackStego.")
                 exit(1)
