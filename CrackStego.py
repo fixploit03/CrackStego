@@ -37,6 +37,7 @@ if sistem_operasi == "Linux":
     perintah_mencari_jenis_sistem_operasi = "uname -o"
     try:
         mencari_jenis_sistem_operasi = subprocess.run(perintah_mencari_jenis_sistem_operasi, shell=True, capture_output=True, text=True)
+        # Done
         if mencari_jenis_sistem_operasi.returncode == 0:
             hasil_mencari_jenis_sistem_operasi = mencari_jenis_sistem_operasi.stdout.strip()
             if re.search(r"Android", hasil_mencari_jenis_sistem_operasi):
@@ -45,6 +46,7 @@ if sistem_operasi == "Linux":
                 perintah_mencari_jenis_distribusi = "cat /etc/os-release"
                 try:
                     mencari_jenis_distribusi = subprocess.run(perintah_mencari_jenis_distribusi, shell=True, capture_output=True, text=True)
+                    # Done 
                     if mencari_jenis_distribusi.returncode == 0:
                         hasil_mencari_jenis_distribusi = mencari_jenis_distribusi.stdout.strip()
                         if re.search(r"ubuntu", hasil_mencari_jenis_distribusi):
@@ -89,6 +91,7 @@ try:
             perintah_mencari_jenis_sistem_operasi = "uname -o"
             try:
                 mencari_jenis_sistem_operasi = subprocess.run(perintah_mencari_jenis_sistem_operasi, shell=True, capture_output=True, text=True)
+                # Done
                 if mencari_jenis_sistem_operasi.returncode == 0:
                     hasil_mencari_jenis_sistem_operasi = mencari_jenis_sistem_operasi.stdout.strip()
                     if re.search(r"Android", hasil_mencari_jenis_sistem_operasi):
@@ -135,6 +138,7 @@ try:
             perintah_mencari_jenis_sistem_operasi = "uname -o"
             try:
                 mencari_jenis_sistem_operasi = subprocess.run(perintah_mencari_jenis_sistem_operasi, shell=True, capture_output=True, text=True)
+                # Done
                 if mencari_jenis_sistem_operasi.returncode == 0:
                     hasil_mencari_jenis_sistem_operasi = mencari_jenis_sistem_operasi.stdout.strip()
                     if re.search(r"Android", hasil_mencari_jenis_sistem_operasi):
@@ -205,16 +209,19 @@ while True:
         perintah_cek_file_stego = f"strings {file_stego}"
         try:
             cek_file_stego = subprocess.run(perintah_cek_file_stego, shell=True, capture_output=True, text=True)
+            # Done
             if cek_file_stego.returncode == 0:
                 pola_file_steghide = r"%&'\(\)\*456789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz\n\s*#3R\n&'\(\)\*56789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz"
                 if re.search(pola_file_steghide, cek_file_stego.stdout):
                     perintah_cek_enkripsi_file_stego = f"steghide extract -sf {file_stego} -p '' -f"
                     try:
                         cek_enkripsi_file_stego = subprocess.run(perintah_cek_enkripsi_file_stego, shell=True, capture_output=True, text=True)
+                        # Done
                         if cek_enkripsi_file_stego.returncode ==0:
                             perintah_mencari_file_tersembunyi = f"steghide info {file_stego} -p ''"
                             try:
                                 mencari_file_tersembunyi = subprocess.run(perintah_mencari_file_tersembunyi, shell=True, capture_output=True, text=True)
+                                # Done 
                                 if mencari_file_tersembunyi.returncode == 0:
                                     pola = r'embedded file "(.*?)":'
                                     cocok = re.search(pola, mencari_file_tersembunyi.stdout)
@@ -308,9 +315,11 @@ try:
             perintah_crack_file_stego = f"steghide extract -sf {file_stego} -p {kata_sandi} -f"
             try:
                 crack_file_stego = subprocess.run(perintah_crack_file_stego, shell=True, capture_output=True, text=True)
+                # Done 
                 if crack_file_stego.returncode == 0:   
                     perintah_mencari_file_tersembunyi = f"steghide info {file_stego} -p {kata_sandi}"
                     mencari_file_tersembunyi = subprocess.run(perintah_mencari_file_tersembunyi, shell=True, capture_output=True, text=True)
+                    # Done 
                     if mencari_file_tersembunyi.returncode == 0:
                         pola = r'embedded file "(.*?)":'
                         cocok = re.search(pola, mencari_file_tersembunyi.stdout)
