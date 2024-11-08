@@ -32,15 +32,25 @@ time.sleep(3)
 # Mengecek sistem operasi
 print("[*] Mengecek sistem operasi...")
 time.sleep(3)
-sistem_operasi = platform.system()
-if sistem_operasi == "Linux":
-    print(f"[+] Sistem operasi : {sistem_operasi}")
-elif sistem_operasi == "Windows":
-    print(f"[+] Sistem operasi : {sistem_operasi}")
-else:
-    print("[-] Sistem operasi Anda tidak mendukung untuk menjalankan program CrackStego.")
+perintah_mencari_jenis_sistem_operasi = "uname -a"
+try:
+    mencari_jenis_sistem_operasi = subprocess.run(perintah_mencari_jenis_sistem_operasi, shell=True, capture_output=True, text=True)
+    if mencari_jenis_sistem_operasi.returncode == 0:
+        hasil_mencari_jenis_sistem_operasi = mencari_jenis_sistem_operasi.stdout.strip()
+        if re.search(r"Android", hasil_mencari_jenis_sistem_operasi):
+            print(f"[+] Sistem operasi : {hasil_mencari_jenis_sistem_operasi}")
+        elif re.search(r"Linux", hasil_mencari_jenis_sistem_operasi):
+            print(f"[+] Sistem operasi : {hasil_mencari_jenis_sistem_operasi}")
+        else:
+            print("[-] Sistem operasi Anda tidak mendukung untuk menjalankan program CrackStego.")
+            exit(1)
+except KeyboardInterrupt:
+    print("\n[-] Program dihentikan oleh pengguna.")
     exit(1)
-
+except Exception as e:
+    print(f"[-] Terjadi kesalahan: {e}.")
+    exit(1)
+    
 # Mengecek Steghide
 print("[*] Mengecek Steghide...")
 time.sleep(3)
