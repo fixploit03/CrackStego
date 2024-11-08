@@ -32,7 +32,7 @@ time.sleep(3)
 # Mengecek sistem operasi
 print("[*] Mengecek sistem operasi...")
 time.sleep(3)
-perintah_mencari_jenis_sistem_operasi = "uname -a"
+perintah_mencari_jenis_sistem_operasi = "uname -o"
 try:
     mencari_jenis_sistem_operasi = subprocess.run(perintah_mencari_jenis_sistem_operasi, shell=True, capture_output=True, text=True)
     if mencari_jenis_sistem_operasi.returncode == 0:
