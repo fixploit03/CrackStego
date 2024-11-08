@@ -17,7 +17,7 @@
 # konsekuensi hukum yang mungkin timbul dari penggunaan program ini. Pastikan untuk selalu mematuhi peraturan dan 
 # etika yang berlaku di wilayah Anda.
 #------------------------------------------------------------------------------------------------------------------
-# DILARANG KERAS UNTUK MENGUBAH DAN MEMUBLIKASIKAN DENGAN NAMA PRIBADI TANPA SEIZIN PENULIS. DIBUAT OPEN SOURCE
+# DILARANG KERAS UNTUK MENGUBAH DAN MEMUBLIKASIKAN DENGAN NAMA PRIBADI TANPA SEIZIN PEMBUAT. DIBUAT OPEN SOURCE
 # AGAR DAPAT DISESUAIKAN DENGAN KEBUTUHAN MASING-MASING. SAYA TIDAK MELARANG UNTUK MENGEDIT KODE YANG ADA, AGAR
 # KALIAN JUGA BISA BERKARYA.
 #------------------------------------------------------------------------------------------------------------------
