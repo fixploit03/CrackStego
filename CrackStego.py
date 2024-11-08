@@ -21,10 +21,7 @@
 # AGAR DAPAT DISESUAIKAN DENGAN KEBUTUHAN MASING-MASING. SAYA TIDAK MELARANG UNTUK MENGEDIT KODE YANG ADA, AGAR
 # KALIAN JUGA BISA BERKARYA.
 #------------------------------------------------------------------------------------------------------------------
-#          SEKALI LAGI JANGAN DI REUPLOAD ANJING W BUAT NYA CAPE LO        
-#               TINGAL PAKE AJA APA SUSAH NYA SI JANCOK                    
-#                   nNGA USAH BUAT PENCITRAAN                            
-#------------------------------------------------------------------------------------------------------------------
+
                                                       
 # Import modul yang dibutuhkan 
 import os
