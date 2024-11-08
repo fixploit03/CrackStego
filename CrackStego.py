@@ -98,10 +98,10 @@ except Exception as e:
     exit(1)
 
 # Membersihkan layar terminal 
-if sistem_operasi == "Linux":
-    os.system("clear")
-elif sistem_operasi == "Windows":
-    os.system("cls")
+# if sistem_operasi == "Linux":
+#     os.system("clear")
+# elif sistem_operasi == "Windows":
+#     os.system("cls")
 
 # Banner program 
 print("""
