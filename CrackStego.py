@@ -41,7 +41,7 @@ if sistem_operasi == "Linux":
             hasil_mencari_jenis_sistem_operasi = mencari_jenis_sistem_operasi.stdout.strip()
             if re.search(r"Android", hasil_mencari_jenis_sistem_operasi):
                 print(f"[+] Sistem operasi : {hasil_mencari_jenis_sistem_operasi}")
-            elif re.search(r"Linux", hasil_mencari_jenis_sistem_operasi):
+            elif re.search(r"GNU/Linux", hasil_mencari_jenis_sistem_operasi):
                 print(f"[+] Sistem operasi : {hasil_mencari_jenis_sistem_operasi}")
             else:
                 print("[-] Sistem operasi Anda tidak mendukung untuk menjalankan program CrackStego.")
@@ -77,7 +77,7 @@ try:
                     if re.search(r"Android", hasil_mencari_jenis_sistem_operasi):
                         print("[-] Instal dengan mengetikkan perintah 'pkg install steghide'.")
                         exit(1)
-                    elif re.search(r"Linux", hasil_mencari_jenis_sistem_operasi):
+                    elif re.search(r"GNU/Linux", hasil_mencari_jenis_sistem_operasi):
                         print("[-] Instal dengan mengetikkan perintah 'sudo apt-get install steghide'.")
                         exit(1)
                     else:
@@ -123,7 +123,7 @@ try:
                     if re.search(r"Android", hasil_mencari_jenis_sistem_operasi):
                         print("[-] Instal dengan mengetikkan perintah 'pkg install binutils'.")
                         exit(1)
-                    elif re.search(r"Linux", hasil_mencari_jenis_sistem_operasi):
+                    elif re.search(r"GNU/Linux", hasil_mencari_jenis_sistem_operasi):
                         print("[-] Instal dengan mengetikkan perintah 'sudo apt-get install binutils'.")
                         exit(1)
                     else:
