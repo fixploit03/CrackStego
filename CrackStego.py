@@ -58,7 +58,7 @@ if sistem_operasi == "Linux":
                     print("\n[-] Program dihentikan oleh pengguna.")
                     exit(1)
                 except Exception as e:
-                    print(f"[-] Terjadi kesalahan: {e}.")
+                    print(f"[-] Terjadi kesalahan : {e}.")
                     exit(1)
             else:
                 print("[-] Sistem operasi Anda tidak mendukung untuk menjalankan program CrackStego.")
@@ -67,7 +67,7 @@ if sistem_operasi == "Linux":
         print("\n[-] Program dihentikan oleh pengguna.")
         exit(1)
     except Exception as e:
-        print(f"[-] Terjadi kesalahan: {e}.")
+        print(f"[-] Terjadi kesalahan : {e}.")
         exit(1)
 elif sistem_operasi == "Windows":
     print(f"[+] Sistem operasi : {sistem_operasi}")
@@ -104,7 +104,7 @@ try:
                 print("\n[-] Program dihentikan oleh pengguna.")
                 exit(1)
             except Exception as e:
-                print(f"[-] Terjadi kesalahan: {e}.")
+                print(f"[-] Terjadi kesalahan : {e}.")
                 exit(1)
         elif sistem_operasi == "Windows":
             print("[-] Silahkan instal dari 'https://steghide.sourceforge.net/download.php'.")
@@ -116,7 +116,7 @@ except KeyboardInterrupt:
     print("\n[-] Program dihentikan oleh pengguna.")
     exit(1)
 except Exception as e:
-    print(f"[-] Terjadi kesalahan: {e}.")
+    print(f"[-] Terjadi kesalahan : {e}.")
     exit(1)
 
 # Mengecek Binutils
@@ -150,7 +150,7 @@ try:
                 print("\n[-] Program dihentikan oleh pengguna.")
                 exit(1)
             except Exception as e:
-                print(f"[-] Terjadi kesalahan: {e}.")
+                print(f"[-] Terjadi kesalahan : {e}.")
                 exit(1)
         elif sistem_operasi == "Windows":
             print("[-] Silahkan instal dari 'https://www.msys2.org/'.")
@@ -162,7 +162,7 @@ except KeyboardInterrupt:
     print("\n[-] Program dihentikan oleh pengguna.")
     exit(1)
 except Exception as e:
-    print(f"[-] Terjadi kesalahan: {e}.")
+    print(f"[-] Terjadi kesalahan : {e}.")
     exit(1)
     
 # Membersihkan layar terminal 
@@ -229,13 +229,13 @@ while True:
                                                 print("\n[-] Program dihentikan oleh pengguna.")
                                                 exit(1)
                                             except Exception as e:
-                                                print(f"[-] Terjadi kesalahan: {e}.")
+                                                print(f"[-] Terjadi kesalahan : {e}.")
                                             exit(1)
                             except KeyboardInterrupt:
                                 print("\n[-] Program dihentikan oleh pengguna.")
                                 exit(1)
                             except Exception as e:
-                                print(f"[-] Terjadi kesalahan: {e}.")
+                                print(f"[-] Terjadi kesalahan : {e}.")
                                 exit(1)
                         else:
                             print(f"[+] File stego '{file_stego}' ditemukan.")
@@ -244,7 +244,7 @@ while True:
                         print("\n[-] Program dihentikan oleh pengguna.")
                         exit(1)
                     except Exception as e:
-                        print(f"[-] Terjadi kesalahan: {e}.")
+                        print(f"[-] Terjadi kesalahan : {e}.")
                         exit(1)
                 else:
                     print(f"[-] File '{file_stego}' bukan file stego.")
@@ -253,13 +253,13 @@ while True:
             print("\n[-] Program dihentikan oleh pengguna.")
             exit(1)
         except Exception as e:
-            print(f"[-] Terjadi kesalahan: {e}.")
+            print(f"[-] Terjadi kesalahan : {e}.")
             exit(1)
     except KeyboardInterrupt:
         print("\n[-] Program dihentikan oleh pengguna.")
         exit(1)
     except Exception as e:
-        print(f"\n[-] Terjadi kesalahan: {e}.")
+        print(f"\n[-] Terjadi kesalahan : {e}.")
         exit(1)
 
 # Meminta nama file wordlist dari pengguna
@@ -286,7 +286,7 @@ while True:
         print("\n[-] Program dihentikan oleh pengguna.")
         exit(1)
     except Exception as e:
-        print(f"\n[-] Terjadi kesalahan: {e}.")
+        print(f"\n[-] Terjadi kesalahan : {e}.")
         exit(1)
 
 print("")
@@ -329,12 +329,12 @@ try:
                 print("\n[-] Program dihentikan oleh pengguna.")
                 exit(1)
             except Exception as e:
-                print(f"\n[-] Terjadi kesalahan: {e}.")
+                print(f"\n[-] Terjadi kesalahan : {e}.")
                 exit(1)
         if not kata_sandi_ditemukan:
             waktu_akhir = datetime.now()
             print(f"[-] Kata sandi tidak ditemukan. Silakan coba file wordlist yang lain.")
             print(f"\n[*] Berakhir pada : {waktu_akhir.strftime('%d-%m-%Y %H:%M:%S')}")
 except Exception as e:
-    print(f"\n[-] Terjadi kesalahan: {e}.")
+    print(f"\n[-] Terjadi kesalahan : {e}.")
     exit(1)
