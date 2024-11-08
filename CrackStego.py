@@ -21,8 +21,7 @@
 # AGAR DAPAT DISESUAIKAN DENGAN KEBUTUHAN MASING-MASING. SAYA TIDAK MELARANG UNTUK MENGEDIT KODE YANG ADA, AGAR
 # KALIAN JUGA BISA BERKARYA.
 #------------------------------------------------------------------------------------------------------------------
-
-                                                      
+                              
 # Import modul yang dibutuhkan 
 import os
 import re
