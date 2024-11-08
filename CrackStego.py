@@ -42,7 +42,7 @@ if sistem_operasi == "Linux":
             if re.search(r"Android", hasil_mencari_jenis_sistem_operasi):
                 print(f"[+] Sistem operasi : {hasil_mencari_jenis_sistem_operasi}")
             elif re.search(r"GNU/Linux", hasil_mencari_jenis_sistem_operasi):
-                print(f"[+] Sistem operasi : {hasil_mencari_jenis_sistem_operasi}")
+                print(f"[+] Sistem operasi : {sistem_operasi}")
             else:
                 print("[-] Sistem operasi Anda tidak mendukung untuk menjalankan program CrackStego.")
                 exit(1)
