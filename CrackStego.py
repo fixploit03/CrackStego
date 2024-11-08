@@ -68,8 +68,10 @@ try:
                 hasil_mencari_jenis_sistem_operasi = mencari_jenis_sistem_operasi.stdout.strip()
                 if re.search(r"Android", hasil_mencari_jenis_sistem_operasi):
                     print("[-] Instal dengan mengetikkan perintah 'pkg install steghide'.")
+                    exit(1)
                 elif re.search(r"Linux", hasil_mencari_jenis_sistem_operasi):
                     print("[-] Instal dengan mengetikkan perintah 'sudo apt-get install steghide'.")
+                    exit(1)
                 # win
                 # print("[-] Silahkan instal dari 'https://steghide.sourceforge.net/download.php'.")
                 else:
