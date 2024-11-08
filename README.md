@@ -9,4 +9,4 @@
   </p>
 </p>
 
-> Masih dalam tahap pengembangan.
+> Masih dalam tahap pengembangan :construction:
