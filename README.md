@@ -41,9 +41,6 @@ Berikut ini adalah ilustrasi (gambar) flowchart yang menunjukkan cara kerja Prog
 
 ![](https://github.com/fixploit03/CrackStego/blob/main/demonstrasi.gif)
 
-> Seluruh Video Demonstrasi CrackStego ada di YouTube:  
-https://youtube.com/playlist?list=PL3uTJ08u6HWwPTljqvkjqJJ0Y1IbauQ6J&si=BB-x_tmy3s8e--w-
-
 ## Lisensi 
 
 Program ini dilisensikan di bawah [Lisensi MIT](https://github.com/fixploit03/CrackStego/blob/main/LICENSE).
