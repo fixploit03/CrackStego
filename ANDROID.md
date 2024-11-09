@@ -13,7 +13,7 @@ Berikut adalah persyaratan yang diperlukan untuk menjalankan program CrackStego.
 
 ## Link Download
 
-Termux : https://github.com/termux/termux-app/releases/download/v0.118.1/termux-app_v0.118.1+github-debug_universal.apk
+Termux : https://github.com/termux/termux-app/releases
 
 ## Link Tutorial 
 
