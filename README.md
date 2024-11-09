@@ -14,12 +14,6 @@ atau tanpa izin pemilik file. Pengguna bertanggung jawab penuh atas segala
 konsekuensi hukum yang mungkin timbul dari penggunaan program ini. Pastikan
 untuk selalu mematuhi peraturan dan etika yang berlaku di wilayah Anda.
 
-## Flowchart 
-
-Berikut ini adalah ilustrasi (gambar) flowchart yang menunjukkan cara kerja Program CrackStego untuk meng-crack file stego.
-
-![](https://github.com/fixploit03/CrackStego/blob/main/FLC.jpg)
-
 ## Fitur Utama 
 
 1. **Dictionary Attack**:  
