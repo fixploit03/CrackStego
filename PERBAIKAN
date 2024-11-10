@@ -5,8 +5,7 @@ Memperbanyak pola file steghide
 Mengecek apakah file steghide dilindungi kata sandi atau tidak.
 
 [8-11-2024] [8-11-2024]
-- Memperbaiki logika saat mengecek sistem operasi.
-- Memperketat logika saat mengecek sistem operasi terutama di distribusi Linux.
+Memperketat logika saat mengecek sistem operasi terutama di distribusi Linux.
 
 [10-11-2024] [MASIH]
 Memperbaiki error saat melakukan drag and drop file.
