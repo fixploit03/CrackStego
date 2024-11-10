@@ -209,7 +209,7 @@ print("""
 # Meminta nama file stego dari pengguna
 while True:
     try:
-        file_stego = input("[#] Masukkan nama file stego : ")
+        file_stego = input("[#] Masukkan nama file stego : ").strip().strip("'\"")
         print(f"[*] Mengecek file stego '{file_stego}'...")
         time.sleep(3)
         if not file_stego:
@@ -287,7 +287,7 @@ while True:
 # Meminta nama file wordlist dari pengguna
 while True:
     try:
-        file_wordlist = input("[#] Masukkan nama file wordlist : ")
+        file_wordlist = input("[#] Masukkan nama file wordlist : ").strip().strip("'\"")
         print(f"[*] Mengecek file wordlist '{file_wordlist}'...")
         time.sleep(3)
         if not file_wordlist:
