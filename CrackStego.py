@@ -65,9 +65,9 @@ if sistem_operasi == "Linux":
                     if mencari_jenis_distribusi.returncode == 0:
                         hasil_mencari_jenis_distribusi = mencari_jenis_distribusi.stdout.strip()
                         if re.search(r"ubuntu", hasil_mencari_jenis_distribusi):
-                            print(f"[+] Sistem operasi : {hasil_mencari_jenis_sistem_operasi}")
+                            print(f"[+] Sistem operasi : {sistem_operasi}")
                         elif re.search(r"debian", hasil_mencari_jenis_distribusi):
-                            print(f"[+] Sistem operasi : {hasil_mencari_jenis_sistem_operasi}")
+                            print(f"[+] Sistem operasi : {sistem_operasi}")
                         else:
                             print("[-] Sistem operasi Anda tidak mendukung untuk menjalankan program CrackStego.")
                             exit(1)
