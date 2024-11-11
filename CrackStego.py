@@ -72,7 +72,15 @@ if sistem_operasi == "Linux":
                                 pola_id_linux = r'\bID=(\w+)'
                                 mencocokkan_pola_id_linux = re.search(pola_id_linux, mencari_jenis_id_sistem_operasi_linux.stdout)
                                 if mencocokkan_pola_id_linux:
+                                    # ID Linux
                                     id_linux = mencocokkan_pola_id_linux.group(1).strip()
+                                    if re.search(r"ubuntu", hasil_mencari_jenis_distribusi):
+                                        print(f"[+] Sistem operasi : {sistem_operasi} ({id_linux})")
+                                    elif re.search(r"debian", hasil_mencari_jenis_distribusi):
+                                        print(f"[+] Sistem operasi : {sistem_operasi} ({id_linux})")
+                                    else:
+                                        print("[-] Sistem operasi Anda tidak mendukung untuk menjalankan program CrackStego.")
+                                        exit(1)
                         except FileNotFoundError:
                             print(f"[-] File '{file_id_linux}' tidak ditemukan.")
                             exit(1)
@@ -81,13 +89,6 @@ if sistem_operasi == "Linux":
                             exit(1)
                         except Exception as e:
                             print(f"[-] Terjadi kesalahan : {e}.")
-                            exit(1)
-                        if re.search(r"ubuntu", hasil_mencari_jenis_distribusi):
-                            print(f"[+] Sistem operasi : {sistem_operasi} ({id_linux})")
-                        elif re.search(r"debian", hasil_mencari_jenis_distribusi):
-                            print(f"[+] Sistem operasi : {sistem_operasi} ({id_linux})")
-                        else:
-                            print("[-] Sistem operasi Anda tidak mendukung untuk menjalankan program CrackStego.")
                             exit(1)
                 except KeyboardInterrupt:
                     print("\n[-] Program dihentikan oleh pengguna.")
