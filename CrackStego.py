@@ -64,10 +64,28 @@ if sistem_operasi == "Linux":
                     # Done 
                     if mencari_jenis_distribusi.returncode == 0:
                         hasil_mencari_jenis_distribusi = mencari_jenis_distribusi.stdout.strip()
+                        file_id_linux = "/etc/os-release"
+                        perintah_mencari_jenis_id_sistem_operasi_linux = f"cat {file_id_linux}"
+                        try:
+                            mencari_jenis_id_sistem_operasi_linux = subprocess.run(perintah_mencari_jenis_id_sistem_operasi_linux, shell=True, capture_output=True, text=True)
+                            if mencari_jenis_id_sistem_operasi_linux.returncode == 0:
+                                pola_id_linux = r'\bID=(\w+)'
+                                mencocokkan_pola_id_linux = re.search(pola_id_linux, mencari_jenis_id_sistem_operasi_linux.stdout)
+                                if mencocokkan_pola_id_linux:
+                                    id_linux = mencocokkan_pola_id_linux.group(1).strip()
+                        except FileNotFoundError:
+                            print(f"[-] File '{file_id_linux}' tidak ditemukan.")
+                            exit(1)
+                        except KeyboardInterrupt:
+                            print("\n[-] Program dihentikan oleh pengguna.")
+                            exit(1)
+                        except Exception as e:
+                            print(f"[-] Terjadi kesalahan : {e}.")
+                            exit(1)
                         if re.search(r"ubuntu", hasil_mencari_jenis_distribusi):
-                            print(f"[+] Sistem operasi : {sistem_operasi}")
+                            print(f"[+] Sistem operasi : {sistem_operasi} ({id_linux})")
                         elif re.search(r"debian", hasil_mencari_jenis_distribusi):
-                            print(f"[+] Sistem operasi : {sistem_operasi}")
+                            print(f"[+] Sistem operasi : {sistem_operasi} ({id_linux})")
                         else:
                             print("[-] Sistem operasi Anda tidak mendukung untuk menjalankan program CrackStego.")
                             exit(1)
