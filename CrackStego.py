@@ -258,6 +258,7 @@ while True:
 
 # Meminta nama file wordlist dari pengguna
 while True:
+    # try 1
     try:
         file_wordlist = input("[#] Masukkan nama file wordlist : ").strip().strip("'\"")
         print(f"[*] Mengecek file wordlist '{file_wordlist}'...")
@@ -280,6 +281,7 @@ while True:
             continue 
         print(f"[+] File wordlist '{file_wordlist}' ditemukan.")
         break
+    # try 1
     except KeyboardInterrupt:
         print("\n[-] Program dihentikan oleh pengguna.")
         exit(1)
@@ -291,6 +293,7 @@ print("")
 kata_sandi_ditemukan = False
 
 # Proses cracking file stego
+# try 1
 try:
     with open(file_wordlist, "r", encoding="latin-1", errors="ignore") as fw:
         daftar_kata_sandi = fw.read().splitlines()
@@ -304,38 +307,50 @@ try:
             if kata_sandi == "":
                 continue 
             perintah_crack_file_stego = f"steghide extract -sf {file_stego} -p {kata_sandi} -f"
+            # try 2
             try:
                 crack_file_stego = subprocess.run(perintah_crack_file_stego, shell=True, capture_output=True, text=True)
+                # if 2
                 if crack_file_stego.returncode == 0: 
                     print(f"[+] Kata sandi ditemukan : {kata_sandi}") 
                     perintah_mencari_file_tersembunyi = f"steghide info {file_stego} -p {kata_sandi}"
+                    # try 3
                     try:
                         mencari_file_tersembunyi = subprocess.run(perintah_mencari_file_tersembunyi, shell=True, capture_output=True, text=True)
+                        # if 3
                         if mencari_file_tersembunyi.returncode == 0:
                             pola_file_tersembunyi = r'embedded file "(.*?)":'
                             mencocokkan_pola_file_tersembunyi = re.search(pola_file_tersembunyi, mencari_file_tersembunyi.stdout)
+                            # if 4
                             if mencocokkan_pola_file_tersembunyi:
                                 nama_file_tersembunyi = mencocokkan_pola_file_tersembunyi.group(1).strip()
                                 waktu_akhir = datetime.now()
+                                # if 5
                                 if os.path.isfile(nama_file_tersembunyi):
                                     print(f"[+] File yang disembunyikan : {nama_file_tersembunyi}") 
+                                # if 5
                                 else:
                                     print(f"[-] File yang disembunyikan tidak ditemukan.")
                                 print(f"\n[*] Berakhir pada : {waktu_akhir.strftime('%d-%m-%Y %H:%M:%S')}")
                                 kata_sandi_ditemukan = True
                                 break
+                            # if 4
                             else:
                                 print("[-] Gagal mendeteksi file yang disembunyikan.")
+                        # if 3
                         else:
                             print("[-] Gagal menjalankan perintah untuk mencari file yang disembunyikan.")
+                    # try 3
                     except KeyboardInterrupt:
                         print("\n[-] Program dihentikan oleh pengguna.")
                         sys.exit(1)
                     except Exception as e:
                         print(f"\n[-] Terjadi kesalahan : {e}.")
                         sys.exit(1)
+                # if 2
                 else:
                     print(f"[-] Kata sandi salah : {kata_sandi}")
+            # try 2
             except KeyboardInterrupt:
                 print("\n[-] Program dihentikan oleh pengguna.")
                 sys.exit(1)
@@ -346,6 +361,10 @@ try:
             waktu_akhir = datetime.now()
             print(f"[-] Kata sandi tidak ditemukan. Silakan coba file wordlist yang lain.")
             print(f"\n[*] Berakhir pada : {waktu_akhir.strftime('%d-%m-%Y %H:%M:%S')}")
+# try 1
+except KeyboardInterrupt:
+    print("\n[-] Program dihentikan oleh pengguna.")
+    sys.exit(1)
 except Exception as e:
     print(f"\n[-] Terjadi kesalahan : {e}.")
     sys.exit(1)
