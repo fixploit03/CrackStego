@@ -27,6 +27,7 @@ import os
 import re
 import subprocess           
 import time
+import sys
 import platform
 from datetime import datetime
 
@@ -65,13 +66,13 @@ if sistem_operasi == "Linux":
                     print(f"[+] Sistem operasi : {sistem_operasi} ({id_linux})")
                 else:
                       print("[-] Sistem operasi Anda tidak mendukung untuk menjalankan program CrackStego.")
-                      exit(1)
+                      sys.exit(1)
     except KeyboardInterrupt:
         print("\n[-] Program dihentikan oleh pengguna.")
-        exit(1)
+        sys.exit(1)
     except Exception as e:
         print(f"[-] Terjadi kesalahan : {e}.")
-        exit(1)
+        sys.exit(1)
 else:
     print("[-] Sistem operasi Anda tidak mendukung untuk menjalankan program CrackStego.")
     exit(1)
