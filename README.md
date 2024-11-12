@@ -1,10 +1,10 @@
 # CrackStego
 
-[![versi](https://img.shields.io/badge/Versi-1.0.0-blue)](https://github.com/fixploit03/CrackStego/releases)
-[![lisensi](https://img.shields.io/badge/Lisensi-MIT-green)](https://github.com/fixploit03/CrackStego/blob/main/LICENSE)
+[![versi](https://img.shields.io/badge/Versi-1.0.0-green)](https://github.com/fixploit03/CrackStego/releases)
+[![lisensi](https://img.shields.io/badge/Lisensi-MIT-blue)](https://github.com/fixploit03/CrackStego/blob/main/LICENSE)
 [![versi python](https://img.shields.io/badge/Python-%E2%89%A5%203.6-blue.svg)](https://www.python.org/)
-[![dipelihara](https://img.shields.io/badge/Dipelihara-Tidak-red)]()
-[![dikembangan di kali linux](https://img.shields.io/badge/Dikembangkan%20di-Kali%20Linux-blueviolet)](https://www.kali.org/)
+[![Dipelihara](https://img.shields.io/badge/Dipelihara-Tidak-red)](https://img.shields.io/badge/Dipelihara-Tidak-red)
+[![Dikembangkan](https://img.shields.io/badge/Dikembangkan%20di-Kali%20Linux-blue)](https://www.kali.org/)
 
 `CrackStego` adalah program Python yang dirancang untuk meng-crack file stego yang dihasilkan oleh [Steghide](https://steghide.sourceforge.net/) dengan menggunakan teknik serangan [Dictionary Attack](https://www.asdf.id/definisi-dictionary-attack-adalah/).
 
