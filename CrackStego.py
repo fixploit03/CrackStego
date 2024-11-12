@@ -141,6 +141,7 @@ print("""
 
 # Meminta nama file stego dari pengguna
 while True:
+    # try 1
     try:
         file_stego = input("[#] Masukkan nama file stego : ").strip().strip("'\"")
         print(f"[*] Mengecek file stego '{file_stego}'...")
@@ -155,69 +156,85 @@ while True:
             print(f"[-] File '{file_stego}' bukan file stego.")
             continue
         perintah_cek_file_stego = f"strings {file_stego}"
+        # try 2
         try:
             cek_file_stego = subprocess.run(perintah_cek_file_stego, shell=True, capture_output=True, text=True)
-            # Done
+            # if 1 
             if cek_file_stego.returncode == 0:
-                hasil_cek_file_stego = cek_file_stego.stdout.strip()
-                # pola_file_steghide = r"%&'\(\)\*456789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz\n\s*#3R\n&'\(\)\*56789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz"
-                if re.search(r"%&'\(\)\*456789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz\n\s*#3R\n&'\(\)\*56789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz", hasil_cek_file_stego):
+                pola_file_steghide = r"%&'\(\)\*456789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz\n\s*#3R\n&'\(\)\*56789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz"
+                mencocokkan_pola_file_steghide = re.search(pola_file_steghide, cek_file_stego.stdout):
+                # if 2
+                if mencocokkan_pola_file_steghide:
                     perintah_cek_enkripsi_file_stego = f"steghide extract -sf {file_stego} -p '' -f"
+                    # try 3
                     try:
                         cek_enkripsi_file_stego = subprocess.run(perintah_cek_enkripsi_file_stego, shell=True, capture_output=True, text=True)
-                        # Done
+                        # if 4
                         if cek_enkripsi_file_stego.returncode ==0:
-                            perintah_mencari_file_tersembunyi = f"steghide info {file_stego} -p ''"
+                            perintah_mencari_file_tersembunyi = f"steghide info {file_stego} -p {kata_sandi}"
+                            # try 4
                             try:
                                 mencari_file_tersembunyi = subprocess.run(perintah_mencari_file_tersembunyi, shell=True, capture_output=True, text=True)
-                                # Done 
+                                # if 5
                                 if mencari_file_tersembunyi.returncode == 0:
-                                    hasil_mencari_file_tersembunyi = mencari_file_tersembunyi.stdout.strip()
-                                    # pola_file_tersembunyi = r'embedded file "(.*?)":'
-                                    mencocokkan_pola_file_tersembunyi = re.search(r'embedded file "(.*?)":', hasil_mencari_file_tersembunyi)
+                                    pola_file_tersembunyi = r'embedded file "(.*?)":'
+                                    mencocokkan_pola_file_tersembunyi = re.search(pola_file_tersembunyi, mencari_file_tersembunyi.stdout)
+                                    # if 6
                                     if mencocokkan_pola_file_tersembunyi:
                                         nama_file_tersembunyi = mencocokkan_pola_file_tersembunyi.group(1).strip()
+                                        waktu_akhir = datetime.now()
+                                        # if 7
                                         if os.path.isfile(nama_file_tersembunyi):
-                                            try:
-                                                os.remove(nama_file_tersembunyi)
-                                                print(f"[-] File stego '{file_stego}' tidak dilindungi oleh kata sandi.")
-                                                continue
-                                            except KeyboardInterrupt:
-                                                print("\n[-] Program dihentikan oleh pengguna.")
-                                                exit(1)
-                                            except Exception as e:
-                                                print(f"[-] Terjadi kesalahan : {e}.")
-                                            exit(1)
+                                            print(f"[+] File yang disembunyikan : {nama_file_tersembunyi}") 
+                                        # if 7
+                                        else:
+                                            print(f"[-] File yang disembunyikan tidak ditemukan.")
+                                    # if 6
+                                    else:
+                                        print("[-] Gagal mendeteksi file yang disembunyikan.")
+                                # if 5
+                                else:
+                                    print("[-] Gagal menjalankan perintah untuk mencari file yang disembunyikan.")
+                            # try 4
                             except KeyboardInterrupt:
                                 print("\n[-] Program dihentikan oleh pengguna.")
-                                exit(1)
+                                sys.exit(1)
                             except Exception as e:
-                                print(f"[-] Terjadi kesalahan : {e}.")
-                                exit(1)
+                                print(f"\n[-] Terjadi kesalahan : {e}.")
+                                sys.exit(1)
+                        # if 4
                         else:
                             print(f"[+] File stego '{file_stego}' ditemukan.")
                             break
+                    # try 3
                     except KeyboardInterrupt:
                         print("\n[-] Program dihentikan oleh pengguna.")
-                        exit(1)
+                        sys.exit(1)
                     except Exception as e:
                         print(f"[-] Terjadi kesalahan : {e}.")
-                        exit(1)
+                        sys.exit(1)
+                # if 2
                 else:
                     print(f"[-] File '{file_stego}' bukan file stego.")
-                    continue 
+                    continue
+            # if 1
+            else:
+                print("[-] Gagal menjalankan perintah untuk mengecek file Stego.")
+                sys.exit(1)
+        # try 2
         except KeyboardInterrupt:
             print("\n[-] Program dihentikan oleh pengguna.")
-            exit(1)
+            sys.exit(1)
         except Exception as e:
             print(f"[-] Terjadi kesalahan : {e}.")
-            exit(1)
+            sys.exit(1)
+    # try 1
     except KeyboardInterrupt:
         print("\n[-] Program dihentikan oleh pengguna.")
-        exit(1)
+        sys.exit(1)
     except Exception as e:
         print(f"\n[-] Terjadi kesalahan : {e}.")
-        exit(1)
+        sys.exit(1)
 
 # Meminta nama file wordlist dari pengguna
 while True:
@@ -268,24 +285,31 @@ try:
                 if crack_file_stego.returncode == 0: 
                     print(f"[+] Kata sandi ditemukan : {kata_sandi}") 
                     perintah_mencari_file_tersembunyi = f"steghide info {file_stego} -p {kata_sandi}"
-                    mencari_file_tersembunyi = subprocess.run(perintah_mencari_file_tersembunyi, shell=True, capture_output=True, text=True)
-                    if mencari_file_tersembunyi.returncode == 0:
-                        pola_file_tersembunyi = r'embedded file "(.*?)":'
-                        mencocokkan_pola_file_tersembunyi = re.search(pola_file_tersembunyi, mencari_file_tersembunyi.stdout)
-                        if mencocokkan_pola_file_tersembunyi:
-                            nama_file_tersembunyi = mencocokkan_pola_file_tersembunyi.group(1).strip()
-                            waktu_akhir = datetime.now()
-                                if os.path.isfile(nama_file_tersembunyi):
-                                    print(f"[+] File yang disembunyikan : {nama_file_tersembunyi}") 
-                                else:
-                                    print(f"[-] File yang disembunyikan tidak ditemukan.")
-                            print(f"\n[*] Berakhir pada : {waktu_akhir.strftime('%d-%m-%Y %H:%M:%S')}")
-                            kata_sandi_ditemukan = True
-                            break
+                    try:
+                        mencari_file_tersembunyi = subprocess.run(perintah_mencari_file_tersembunyi, shell=True, capture_output=True, text=True)
+                        if mencari_file_tersembunyi.returncode == 0:
+                            pola_file_tersembunyi = r'embedded file "(.*?)":'
+                            mencocokkan_pola_file_tersembunyi = re.search(pola_file_tersembunyi, mencari_file_tersembunyi.stdout)
+                            if mencocokkan_pola_file_tersembunyi:
+                                nama_file_tersembunyi = mencocokkan_pola_file_tersembunyi.group(1).strip()
+                                waktu_akhir = datetime.now()
+                                    if os.path.isfile(nama_file_tersembunyi):
+                                        print(f"[+] File yang disembunyikan : {nama_file_tersembunyi}") 
+                                    else:
+                                        print(f"[-] File yang disembunyikan tidak ditemukan.")
+                                print(f"\n[*] Berakhir pada : {waktu_akhir.strftime('%d-%m-%Y %H:%M:%S')}")
+                                kata_sandi_ditemukan = True
+                                break
+                            else:
+                                print("[-] Gagal mendeteksi file yang disembunyikan.")
                         else:
-                            print("[-] Gagal mendeteksi file yang disembunyikan.")
-                    else:
-                        print("[-] Gagal menjalankan perintah untuk mencari file yang disembunyikan.")
+                            print("[-] Gagal menjalankan perintah untuk mencari file yang disembunyikan.")
+                    except KeyboardInterrupt:
+                        print("\n[-] Program dihentikan oleh pengguna.")
+                        sys.exit(1)
+                    except Exception as e:
+                        print(f"\n[-] Terjadi kesalahan : {e}.")
+                        sys.exit(1)
                 else:
                     print(f"[-] Kata sandi salah : {kata_sandi}")
             except KeyboardInterrupt:
