@@ -344,10 +344,10 @@ try:
                       mencari_file_tersembunyi = subprocess.run(perintah_mencari_file_tersembunyi, shell=True, capture_output=True, text=True)
                       # Done 
                       if mencari_file_tersembunyi.returncode == 0:
-                          pola = r'embedded file "(.*?)":'
-                          cocok = re.search(pola, mencari_file_tersembunyi.stdout)
-                          if cocok:
-                              nama_file_tersembunyi = cocok.group(1).strip()
+                          pola_file_tersembunyi = r'embedded file "(.*?)":'
+                          mencocokkan_pola_file_tersembunyi = re.search(pola_file_tersembunyi, mencari_file_tersembunyi.stdout)
+                          if mencocokkan_pola_file_tersembunyi:
+                              nama_file_tersembunyi = mencocokkan_pola_file_tersembunyi.group(1).strip()
                               waktu_akhir = datetime.now()
                               print(f"[+] Kata sandi ditemukan : {kata_sandi}") 
                               if os.path.isfile(nama_file_tersembunyi):
