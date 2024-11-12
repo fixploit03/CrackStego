@@ -1,10 +1,10 @@
-# Cara Instal CrackStego
+# Cara Menginstal CrackStego
 
 Berikut ini adalah persyaratan dan langkah-langkah untuk menginstal CrackStego.
 
 ## Persyaratan 
 
-Berikut adalah persyaratan yang diperlukan untuk menginstal dan menjalankan program CrackStego:
+Berikut adalah persyaratan yang diperlukan untuk menginstal dan menjalankanl CrackStego:
 
 - Python
 - Git
