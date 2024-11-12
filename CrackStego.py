@@ -55,21 +55,21 @@ if sistem_operasi == "Linux":
     try:
         mencari_id_linux = subprocess.run(perintah_mencari_id_linux, shell=True, capture_output=True, text=True)
         if mencari_id_linux.returncode == 0:
-        hasil_mencari_id_linux = mencari_id_linux.stdout.strip()
-        pola_file_id_linux = r'\bID=(\w+)'
-        mencocokkan_pola_file_id_linux = re.search(pola_file_id_linux, mencari_id_linux.stdout)
-        if mencocokkan_pola_file_id_linux:
-            # ID Linux
-            id_linux = mencocokkan_pola_file_id_linux.group(1).strip()
-            # Linux Ubuntu 
-            if re.search(r"ubuntu", hasil_mencari_id_linux):
-                  print(f"[+] Sistem operasi : {sistem_operasi} ({id_linux})")
-            # Linux Debian 
-            elif re.search(r"debian", hasil_mencari_id_linux):
-                  print(f"[+] Sistem operasi : {sistem_operasi} ({id_linux})")
-            else:
-                  print("[-] Sistem operasi Anda tidak mendukung untuk menjalankan program CrackStego.")
-                  exit(1)
+            hasil_mencari_id_linux = mencari_id_linux.stdout.strip()
+            pola_file_id_linux = r'\bID=(\w+)'
+            mencocokkan_pola_file_id_linux = re.search(pola_file_id_linux, mencari_id_linux.stdout)
+            if mencocokkan_pola_file_id_linux:
+                # ID Linux
+                id_linux = mencocokkan_pola_file_id_linux.group(1).strip()
+                # Linux Ubuntu 
+                if re.search(r"ubuntu", hasil_mencari_id_linux):
+                    print(f"[+] Sistem operasi : {sistem_operasi} ({id_linux})")
+                # Linux Debian 
+                elif re.search(r"debian", hasil_mencari_id_linux):
+                      print(f"[+] Sistem operasi : {sistem_operasi} ({id_linux})")
+                else:
+                      print("[-] Sistem operasi Anda tidak mendukung untuk menjalankan program CrackStego.")
+                      exit(1)
     except KeyboardInterrupt:
         print("\n[-] Program dihentikan oleh pengguna.")
         exit(1)
