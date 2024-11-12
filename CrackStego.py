@@ -68,7 +68,7 @@ if sistem_operasi == "Linux":
                         hasil_mencari_jenis_distribusi_dan_id_linux = mencari_jenis_distribusi_dan_id_linux.stdout.strip()
                         # Pola ID Linux 
                         pola_id_linux = r'\bID=(\w+)'
-                        mencocokkan_pola_id_linux = re.search(pola_id_linux, mencari_jenis_distribusi_dan_id_linux.stdout)
+                        mencocokkan_pola_id_linux = re.search(pola_id_linux, hasil_mencari_jenis_distribusi_dan_id_linux.stdout)
                         if mencocokkan_pola_id_linux:
                         # ID Linux
                             id_linux = mencocokkan_pola_id_linux.group(1).strip()
