@@ -65,8 +65,8 @@ if sistem_operasi == "Linux":
                 if id_linux == "ubuntu" or id_linux == "debian":
                     print(f"[+] Sistem operasi : {sistem_operasi} ({id_linux})")
                 else:
-                      print("[-] Sistem operasi Anda tidak mendukung untuk menjalankan program CrackStego.")
-                      sys.exit(1)
+                    print("[-] Sistem operasi Anda tidak mendukung untuk menjalankan program CrackStego.")
+                    sys.exit(1)
             else:
                 print("[-] Gagal mendeteksi ID sistem operasi Linux.")
                 sys.exit(1)
