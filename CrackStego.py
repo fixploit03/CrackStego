@@ -49,36 +49,46 @@ time.sleep(3)
 print("[*] Mengecek sistem operasi...")
 time.sleep(3)
 sistem_operasi = platform.system()
+# if 1
 if sistem_operasi == "Linux":
     # File ID Linux
     file_id_linux = "/etc/os-release"
     perintah_mencari_id_linux = f"cat {file_id_linux}"
+    # try 1
     try:
         mencari_id_linux = subprocess.run(perintah_mencari_id_linux, shell=True, capture_output=True, text=True)
+        # if 2
         if mencari_id_linux.returncode == 0:
             hasil_mencari_id_linux = mencari_id_linux.stdout.strip()
             pola_file_id_linux = r'\bID=(\w+)'
             mencocokkan_pola_file_id_linux = re.search(pola_file_id_linux, mencari_id_linux.stdout)
+            # if 3
             if mencocokkan_pola_file_id_linux:
                 # ID Linux
                 id_linux = mencocokkan_pola_file_id_linux.group(1)
+                # if 5
                 if id_linux == "ubuntu" or id_linux == "debian":
                     print(f"[+] Sistem operasi : {sistem_operasi} ({id_linux})")
+                # if 5
                 else:
                     print("[-] Sistem operasi Anda tidak mendukung untuk menjalankan program CrackStego.")
                     sys.exit(1)
+            # if 3
             else:
                 print("[-] Gagal mendeteksi ID sistem operasi Linux.")
                 sys.exit(1)
+        # if 2
         else:
             print("[-] Gagal menjalankan perintah untuk mencari ID sistem operasi Linux.")
             sys.exit(1)
+    # try 1
     except KeyboardInterrupt:
         print("\n[-] Program dihentikan oleh pengguna.")
         sys.exit(1)
     except Exception as e:
         print(f"[-] Terjadi kesalahan : {e}.")
         sys.exit(1)
+# if 1
 else:
     print("[-] Sistem operasi Anda tidak mendukung untuk menjalankan program CrackStego.")
     sys.exit(1)
