@@ -35,11 +35,11 @@ Untuk penjelasan yang lebih lengkap, silakan tonton video ini:
 
 ## Instalasi
 
-Cara menginstal CrackStego ada [di sini]().
+Cara menginstal CrackStego ada [di sini](https://github.com/fixploit03/CrackStego/blob/main/INSTAL.md).
 
 ## Demonstrasi
 
-Video demonstrasi CrackStego ada [di sini]().
+Video demonstrasi CrackStego ada [di sini](https://youtu.be/PFvE8eLsRhk?si=h6Trq-w8bLOB1Jh8).
 
 ## Lisensi 
 
