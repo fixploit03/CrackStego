@@ -234,8 +234,9 @@ while True:
             cek_file_stego = subprocess.run(perintah_cek_file_stego, shell=True, capture_output=True, text=True)
             # Done
             if cek_file_stego.returncode == 0:
-                pola_file_steghide = r"%&'\(\)\*456789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz\n\s*#3R\n&'\(\)\*56789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz"
-                if re.search(pola_file_steghide, cek_file_stego.stdout):
+                hasil_cek_file_stego = cek_file_stego.stdout.strip()
+                # pola_file_steghide = r"%&'\(\)\*456789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz\n\s*#3R\n&'\(\)\*56789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz"
+                if re.search(r"%&'\(\)\*456789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz\n\s*#3R\n&'\(\)\*56789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz", hasil_cek_file_stego):
                     perintah_cek_enkripsi_file_stego = f"steghide extract -sf {file_stego} -p '' -f"
                     try:
                         cek_enkripsi_file_stego = subprocess.run(perintah_cek_enkripsi_file_stego, shell=True, capture_output=True, text=True)
@@ -246,8 +247,9 @@ while True:
                                 mencari_file_tersembunyi = subprocess.run(perintah_mencari_file_tersembunyi, shell=True, capture_output=True, text=True)
                                 # Done 
                                 if mencari_file_tersembunyi.returncode == 0:
-                                    pola_file_tersembunyi = r'embedded file "(.*?)":'
-                                    mencocokkan_pola_file_tersembunyi = re.search(pola_file_tersembunyi, mencari_file_tersembunyi.stdout)
+                                    hasil_mencari_file_tersembunyi = mencari_file_tersembunyi.stdout.strip()
+                                    # pola_file_tersembunyi = r'embedded file "(.*?)":'
+                                    mencocokkan_pola_file_tersembunyi = re.search(r'embedded file "(.*?)":', hasil_mencari_file_tersembunyi)
                                     if mencocokkan_pola_file_tersembunyi:
                                         nama_file_tersembunyi = mencocokkan_pola_file_tersembunyi.group(1).strip()
                                         if os.path.isfile(nama_file_tersembunyi):
