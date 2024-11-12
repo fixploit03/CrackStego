@@ -61,12 +61,8 @@ if sistem_operasi == "Linux":
             if mencocokkan_pola_file_id_linux:
                 # ID Linux
                 id_linux = mencocokkan_pola_file_id_linux.group(1).strip()
-                # Linux Ubuntu 
-                if re.search(r"ubuntu", hasil_mencari_id_linux):
+                if id_linux == "ubuntu" or id_linux == "debian":
                     print(f"[+] Sistem operasi : {sistem_operasi} ({id_linux})")
-                # Linux Debian 
-                elif re.search(r"debian", hasil_mencari_id_linux):
-                      print(f"[+] Sistem operasi : {sistem_operasi} ({id_linux})")
                 else:
                       print("[-] Sistem operasi Anda tidak mendukung untuk menjalankan program CrackStego.")
                       exit(1)
