@@ -93,16 +93,16 @@ try:
         sistem_operasi = platform.system()
         if sistem_operasi == "Linux": 
             print("[-] Instal dengan mengetikkan perintah 'bash instal.sh'.")
-            exit(1)
+            sys.exit(1)
         else:
             print("[-] Sistem operasi Anda tidak mendukung untuk menjalankan program CrackStego.")
-            exit(1)
+            sys.exit(1)
 except KeyboardInterrupt:
     print("\n[-] Program dihentikan oleh pengguna.")
-    exit(1)
+    sys.exit(1)
 except Exception as e:
     print(f"[-] Terjadi kesalahan : {e}.")
-    exit(1)
+    sys.exit(1)
 
 # Mengecek Stegseek
 print("[*] Mengecek Stegseek...")
@@ -117,16 +117,16 @@ try:
         sistem_operasi = platform.system()
         if sistem_operasi == "Linux": 
             print("[-] Instal dengan mengetikkan perintah 'bash instal.sh'.")
-            exit(1)
+            sys.exit(1)
         else:
             print("[-] Sistem operasi Anda tidak mendukung untuk menjalankan program CrackStego.")
-            exit(1)
+            sys.exit(1)
 except KeyboardInterrupt:
     print("\n[-] Program dihentikan oleh pengguna.")
-    exit(1)
+    sys.exit(1)
 except Exception as e:
     print(f"[-] Terjadi kesalahan : {e}.")
-    exit(1)
+    sys.exit(1)
   
 # Mengecek Binutils
 print("[*] Mengecek Binutils...")
@@ -143,16 +143,16 @@ try:
         sistem_operasi = platform.system()
         if sistem_operasi == "Linux": 
             print("[-] Instal dengan mengetikkan perintah 'bash instal.sh'.")
-            exit(1)
+            sys.exit(1)
         else:
             print("[-] Sistem operasi Anda tidak mendukung untuk menjalankan program CrackStego.")
-            exit(1)
+            sys.exit(1)
 except KeyboardInterrupt:
     print("\n[-] Program dihentikan oleh pengguna.")
-    exit(1)
+    sys.exit(1)
 except Exception as e:
     print(f"[-] Terjadi kesalahan : {e}.")
-    exit(1)
+    sys.exit(1)
     
 # Membersihkan layar terminal 
 sistem_operasi = platform.system()
