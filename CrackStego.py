@@ -59,7 +59,7 @@ if sistem_operasi == "Linux":
             pola_file_id_linux = r'\bID=(\w+)'
             mencocokkan_pola_file_id_linux = re.search(pola_file_id_linux, mencari_id_linux.stdout)
             if mencocokkan_pola_file_id_linux:
-                id_linux = mencocokkan_pola_file_id_linux.group(1)
+                id_linux = mencocokkan_pola_file_id_linux.group(1).strip()
                 if id_linux in ["ubuntu", "debian", "kali"]:
                     print(f"[+] Sistem operasi : {sistem_operasi} ({id_linux})")
                 else:
