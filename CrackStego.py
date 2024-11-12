@@ -105,8 +105,8 @@ print("[*] Mengecek Steghide...")
 time.sleep(3)
 perintah_cek_steghide = "steghide --version"
 try:
-    cek_file_steghide = subprocess.run(perintah_cek_steghide, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-    if cek_file_steghide.returncode == 0:
+    cek_steghide = subprocess.run(perintah_cek_steghide, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    if cek_steghide.returncode == 0:
         print("[+] Steghide sudah terinstal.")
     else:
         print("[-] Steghide belum terinstal.")
