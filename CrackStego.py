@@ -93,37 +93,8 @@ try:
         print("[+] Steghide sudah terinstal.")
     else:
         print("[-] Steghide belum terinstal.")
-        sistem_operasi = platform.system()
-        if sistem_operasi == "Linux": 
-            print("[-] Instal dengan mengetikkan perintah 'bash instal.sh'.")
-            sys.exit(1)
-        else:
-            print("[-] Sistem operasi Anda tidak mendukung untuk menjalankan program CrackStego.")
-            sys.exit(1)
-except KeyboardInterrupt:
-    print("\n[-] Program dihentikan oleh pengguna.")
-    sys.exit(1)
-except Exception as e:
-    print(f"[-] Terjadi kesalahan : {e}.")
-    sys.exit(1)
-
-# Mengecek Stegseek
-print("[*] Mengecek Stegseek...")
-time.sleep(3)
-perintah_cek_stegseek = "stegseek --version"
-try:
-    cek_stegseek = subprocess.run(perintah_cek_stegseek, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-    if cek_stegseek.returncode == 0:
-        print("[+] Stegseek sudah terinstal.")
-    else:
-        print("[-] Stegseek belum terinstal.")
-        sistem_operasi = platform.system()
-        if sistem_operasi == "Linux": 
-            print("[-] Instal dengan mengetikkan perintah 'bash instal.sh'.")
-            sys.exit(1)
-        else:
-            print("[-] Sistem operasi Anda tidak mendukung untuk menjalankan program CrackStego.")
-            sys.exit(1)
+        print("[-] Instal dengan mengetikkan perintah 'sudo apt-get install steghide'.")
+        sys.exit(1)
 except KeyboardInterrupt:
     print("\n[-] Program dihentikan oleh pengguna.")
     sys.exit(1)
@@ -142,14 +113,9 @@ try:
         input("\nTekan [Enter] untuk melanjutkan...")
         print("")
     else:
-        print("[-] Binutils belum terinstal.")
-        sistem_operasi = platform.system()
-        if sistem_operasi == "Linux": 
-            print("[-] Instal dengan mengetikkan perintah 'bash instal.sh'.")
-            sys.exit(1)
-        else:
-            print("[-] Sistem operasi Anda tidak mendukung untuk menjalankan program CrackStego.")
-            sys.exit(1)
+        print("[-] Binutils belum terinstal.") 
+        print("[-] Instal dengan mengetikkan perintah 'sudo apt-get install binutils'.")
+        sys.exit(1)
 except KeyboardInterrupt:
     print("\n[-] Program dihentikan oleh pengguna.")
     sys.exit(1)
@@ -158,12 +124,7 @@ except Exception as e:
     sys.exit(1)
     
 # Membersihkan layar terminal 
-sistem_operasi = platform.system()
-if sistem_operasi == "Linux":
-    os.system("clear")
-else:
-    print("[-] Sistem operasi Anda tidak mendukung untuk menjalankan program CrackStego.")
-    exit(1)
+os.system("clear")
     
 # Banner program 
 print("""
