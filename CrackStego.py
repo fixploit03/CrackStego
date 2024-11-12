@@ -66,7 +66,7 @@ if sistem_operasi == "Linux":
                 # ID Linux
                 id_linux = mencocokkan_pola_file_id_linux.group(1)
                 # if 5
-                if id_linux == "ubuntu" or id_linux == "debian":
+                if id_linux in ["ubuntu", "debian", "kali"]:
                     print(f"[+] Sistem operasi : {sistem_operasi} ({id_linux})")
                 # if 5
                 else:
