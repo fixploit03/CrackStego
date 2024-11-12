@@ -59,7 +59,6 @@ if sistem_operasi == "Linux":
         mencari_id_linux = subprocess.run(perintah_mencari_id_linux, shell=True, capture_output=True, text=True)
         # if 2
         if mencari_id_linux.returncode == 0:
-            hasil_mencari_id_linux = mencari_id_linux.stdout.strip()
             pola_file_id_linux = r'\bID=(\w+)'
             mencocokkan_pola_file_id_linux = re.search(pola_file_id_linux, mencari_id_linux.stdout)
             # if 3
@@ -97,14 +96,18 @@ else:
 print("[*] Mengecek Steghide...")
 time.sleep(3)
 perintah_cek_steghide = "steghide --version"
+# try 1
 try:
     cek_steghide = subprocess.run(perintah_cek_steghide, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    # if 1
     if cek_steghide.returncode == 0:
         print("[+] Steghide sudah terinstal.")
+    # if 1
     else:
         print("[-] Steghide belum terinstal.")
         print("[-] Instal dengan mengetikkan perintah 'sudo apt-get install steghide'.")
         sys.exit(1)
+# try 1
 except KeyboardInterrupt:
     print("\n[-] Program dihentikan oleh pengguna.")
     sys.exit(1)
@@ -116,16 +119,20 @@ except Exception as e:
 print("[*] Mengecek Binutils...")
 time.sleep(3)
 perintah_cek_binutils = "ld --version"
+# try 1
 try:
     cek_binutils = subprocess.run(perintah_cek_binutils, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    # if 1
     if cek_binutils.returncode == 0:
         print("[+] Binutils sudah terinstal.")
         input("\nTekan [Enter] untuk melanjutkan...")
         print("")
+    # if 1
     else:
         print("[-] Binutils belum terinstal.") 
         print("[-] Instal dengan mengetikkan perintah 'sudo apt-get install binutils'.")
         sys.exit(1)
+# try 1
 except KeyboardInterrupt:
     print("\n[-] Program dihentikan oleh pengguna.")
     sys.exit(1)
