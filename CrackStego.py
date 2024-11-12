@@ -60,21 +60,21 @@ if sistem_operasi == "Linux":
             elif re.search(r"GNU/Linux", hasil_mencari_jenis_sistem_operasi):
                 # File ID Linux
                 file_id_linux = "/etc/os-release"
-                perintah_mencari_jenis_distribusi = f"cat {file_id_linux}"
+                perintah_mencari_jenis_distribusi_dan_id_linux = f"cat {file_id_linux}"
                 try:
-                    mencari_jenis_distribusi = subprocess.run(perintah_mencari_jenis_distribusi, shell=True, capture_output=True, text=True)
+                    mencari_jenis_distribusi_dan_id_linux = subprocess.run(perintah_mencari_jenis_distribusi_dan_id_linux, shell=True, capture_output=True, text=True)
                     # Done 
-                    if mencari_jenis_distribusi.returncode == 0:
-                        hasil_mencari_jenis_distribusi = mencari_jenis_distribusi.stdout.strip()
+                    if mencari_jenis_distribusi_dan_id_linux.returncode == 0:
+                        hasil_mencari_jenis_distribusi_dan_id_linux = mencari_jenis_distribusi_dan_id_linux.stdout.strip()
                         # Pola ID Linux 
                         pola_id_linux = r'\bID=(\w+)'
-                        mencocokkan_pola_id_linux = re.search(pola_id_linux, mencari_jenis_distribusi.stdout)
+                        mencocokkan_pola_id_linux = re.search(pola_id_linux, mencari_jenis_distribusi_dan_id_linux.stdout)
                         if mencocokkan_pola_id_linux:
                         # ID Linux
                             id_linux = mencocokkan_pola_id_linux.group(1).strip()
-                            if re.search(r"ubuntu", hasil_mencari_jenis_distribusi):
+                            if re.search(r"ubuntu", hasil_mencari_jenis_distribusi_dan_id_linux):
                                 print(f"[+] Sistem operasi : {sistem_operasi} ({id_linux})")
-                            elif re.search(r"debian", hasil_mencari_jenis_distribusi):
+                            elif re.search(r"debian", hasil_mencari_jenis_distribusi_dan_id_linux):
                                 print(f"[+] Sistem operasi : {sistem_operasi} ({id_linux})")
                             else:
                                 print("[-] Sistem operasi Anda tidak mendukung untuk menjalankan program CrackStego.")
