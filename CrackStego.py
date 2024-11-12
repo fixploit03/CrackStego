@@ -205,16 +205,30 @@ while True:
                                         waktu_akhir = datetime.now()
                                         # if 7
                                         if os.path.isfile(nama_file_tersembunyi):
-                                            print(f"[+] File yang disembunyikan : {nama_file_tersembunyi}") 
+                                            # try 5
+                                            try:
+                                                os.remove(nama_file_tersembunyi)
+                                                print(f"[-] File stego '{file_stego}' tidak dilindungi oleh kata sandi.")
+                                                continue
+                                            # try 5
+                                            except KeyboardInterrupt:
+                                                print("\n[-] Program dihentikan oleh pengguna.")
+                                                sys.exit(1)
+                                            except Exception as e:
+                                                print(f"[-] Terjadi kesalahan : {e}.")
+                                                sys.exit(1)
                                         # if 7
                                         else:
                                             print(f"[-] File yang disembunyikan tidak ditemukan.")
+                                            sys.exit(1)
                                     # if 6
                                     else:
                                         print("[-] Gagal mendeteksi file yang disembunyikan.")
+                                        sys.exit(1)
                                 # if 5
                                 else:
                                     print("[-] Gagal menjalankan perintah untuk mencari file yang disembunyikan.")
+                                    sys.exit(1)
                             # try 4
                             except KeyboardInterrupt:
                                 print("\n[-] Program dihentikan oleh pengguna.")
@@ -331,15 +345,18 @@ try:
                                 # if 5
                                 else:
                                     print(f"[-] File yang disembunyikan tidak ditemukan.")
+                                    sys.exit(1)
                                 print(f"\n[*] Berakhir pada : {waktu_akhir.strftime('%d-%m-%Y %H:%M:%S')}")
                                 kata_sandi_ditemukan = True
                                 break
                             # if 4
                             else:
                                 print("[-] Gagal mendeteksi file yang disembunyikan.")
+                                sys.exit(1)
                         # if 3
                         else:
                             print("[-] Gagal menjalankan perintah untuk mencari file yang disembunyikan.")
+                            sys.exit(1)
                     # try 3
                     except KeyboardInterrupt:
                         print("\n[-] Program dihentikan oleh pengguna.")
