@@ -70,6 +70,9 @@ if sistem_operasi == "Linux":
             else:
                 print("[-] Gagal mendeteksi ID sistem operasi Linux.")
                 sys.exit(1)
+        else:
+            print("[-] Gagal menjalankan perintah untuk mencari ID sistem operasi Linux.")
+            sys.exit(1)
     except KeyboardInterrupt:
         print("\n[-] Program dihentikan oleh pengguna.")
         sys.exit(1)
@@ -303,35 +306,39 @@ try:
             perintah_crack_file_stego = f"steghide extract -sf {file_stego} -p {kata_sandi} -f"
             try:
                 crack_file_stego = subprocess.run(perintah_crack_file_stego, shell=True, capture_output=True, text=True)
-                # Done 
                 if crack_file_stego.returncode == 0: 
-                      perintah_mencari_file_tersembunyi = f"steghide info {file_stego} -p {kata_sandi}"
-                      mencari_file_tersembunyi = subprocess.run(perintah_mencari_file_tersembunyi, shell=True, capture_output=True, text=True)
-                      # Done 
-                      if mencari_file_tersembunyi.returncode == 0:
-                          pola_file_tersembunyi = r'embedded file "(.*?)":'
-                          mencocokkan_pola_file_tersembunyi = re.search(pola_file_tersembunyi, mencari_file_tersembunyi.stdout)
-                          if mencocokkan_pola_file_tersembunyi:
-                              nama_file_tersembunyi = mencocokkan_pola_file_tersembunyi.group(1).strip()
-                              waktu_akhir = datetime.now()
-                              print(f"[+] Kata sandi ditemukan : {kata_sandi}") 
-                              if os.path.isfile(nama_file_tersembunyi):
-                                  print(f"[+] File yang disembunyikan : {nama_file_tersembunyi}") 
-                                  print(f"\n[*] Berakhir pada : {waktu_akhir.strftime('%d-%m-%Y %H:%M:%S')}")
-                                  kata_sandi_ditemukan = True
-                                  break
+                    print(f"[+] Kata sandi ditemukan : {kata_sandi}") 
+                    perintah_mencari_file_tersembunyi = f"steghide info {file_stego} -p {kata_sandi}"
+                    mencari_file_tersembunyi = subprocess.run(perintah_mencari_file_tersembunyi, shell=True, capture_output=True, text=True)
+                    if mencari_file_tersembunyi.returncode == 0:
+                        pola_file_tersembunyi = r'embedded file "(.*?)":'
+                        mencocokkan_pola_file_tersembunyi = re.search(pola_file_tersembunyi, mencari_file_tersembunyi.stdout)
+                        if mencocokkan_pola_file_tersembunyi:
+                            nama_file_tersembunyi = mencocokkan_pola_file_tersembunyi.group(1).strip()
+                            waktu_akhir = datetime.now()
+                                if os.path.isfile(nama_file_tersembunyi):
+                                    print(f"[+] File yang disembunyikan : {nama_file_tersembunyi}") 
+                                else:
+                                    print(f"[-] File yang disembunyikan tidak ditemukan.")
+                            print(f"\n[*] Berakhir pada : {waktu_akhir.strftime('%d-%m-%Y %H:%M:%S')}")
+                            kata_sandi_ditemukan = True
+                            break
+                        else:
+                            print("[-] Gagal mendeteksi file yang disembunyikan.")
+                    else:
+                        print("[-] Gagal menjalankan perintah untuk mencari file yang disembunyikan.")
                 else:
                     print(f"[-] Kata sandi salah : {kata_sandi}")
             except KeyboardInterrupt:
                 print("\n[-] Program dihentikan oleh pengguna.")
-                exit(1)
+                sys.exit(1)
             except Exception as e:
                 print(f"\n[-] Terjadi kesalahan : {e}.")
-                exit(1)
+                sys.exit(1)
         if not kata_sandi_ditemukan:
             waktu_akhir = datetime.now()
             print(f"[-] Kata sandi tidak ditemukan. Silakan coba file wordlist yang lain.")
             print(f"\n[*] Berakhir pada : {waktu_akhir.strftime('%d-%m-%Y %H:%M:%S')}")
 except Exception as e:
     print(f"\n[-] Terjadi kesalahan : {e}.")
-    exit(1)
+    sys.exit(1)
