@@ -107,30 +107,9 @@ try:
         print("[+] Steghide sudah terinstal.")
     else:
         print("[-] Steghide belum terinstal.")
-        if sistem_operasi == "Linux":
-            perintah_mencari_jenis_sistem_operasi = "uname -o"
-            try:
-                mencari_jenis_sistem_operasi = subprocess.run(perintah_mencari_jenis_sistem_operasi, shell=True, capture_output=True, text=True)
-                # Done
-                if mencari_jenis_sistem_operasi.returncode == 0:
-                    hasil_mencari_jenis_sistem_operasi = mencari_jenis_sistem_operasi.stdout.strip()
-                    if re.search(r"Android", hasil_mencari_jenis_sistem_operasi):
-                        print("[-] Instal dengan mengetikkan perintah 'pkg install steghide'.")
-                        exit(1)
-                    elif re.search(r"GNU/Linux", hasil_mencari_jenis_sistem_operasi):
-                        print("[-] Instal dengan mengetikkan perintah 'sudo apt-get install steghide'.")
-                        exit(1)
-                    else:
-                        print("[-] Sistem operasi Anda tidak mendukung untuk menjalankan program CrackStego.")
-                        exit(1)
-            except KeyboardInterrupt:
-                print("\n[-] Program dihentikan oleh pengguna.")
-                exit(1)
-            except Exception as e:
-                print(f"[-] Terjadi kesalahan : {e}.")
-                exit(1)
-        elif sistem_operasi == "Windows":
-            print("[-] Silahkan instal dari 'https://steghide.sourceforge.net/download.php'.")
+        sistem_operasi = platform.system()
+        if sistem_operasi == "Linux": 
+            print("[-] Instal dengan mengetikkan perintah 'bash instal.sh'.")
             exit(1)
         else:
             print("[-] Sistem operasi Anda tidak mendukung untuk menjalankan program CrackStego.")
@@ -142,6 +121,30 @@ except Exception as e:
     print(f"[-] Terjadi kesalahan : {e}.")
     exit(1)
 
+# Mengecek Stegseek
+print("[*] Mengecek Stegseek...")
+time.sleep(3)
+perintah_cek_stegseek = "stegseek --version"
+try:
+    cek_stegseek = subprocess.run(perintah_cek_stegseek, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    if cek_stegseek.returncode == 0:
+        print("[+] Stegseek sudah terinstal.")
+    else:
+        print("[-] Stegseek belum terinstal.")
+        sistem_operasi = platform.system()
+        if sistem_operasi == "Linux": 
+            print("[-] Instal dengan mengetikkan perintah 'bash instal.sh'.")
+            exit(1)
+        else:
+            print("[-] Sistem operasi Anda tidak mendukung untuk menjalankan program CrackStego.")
+            exit(1)
+except KeyboardInterrupt:
+    print("\n[-] Program dihentikan oleh pengguna.")
+    exit(1)
+except Exception as e:
+    print(f"[-] Terjadi kesalahan : {e}.")
+    exit(1)
+  
 # Mengecek Binutils
 print("[*] Mengecek Binutils...")
 time.sleep(3)
@@ -154,30 +157,9 @@ try:
         print("")
     else:
         print("[-] Binutils belum terinstal.")
-        if sistem_operasi == "Linux":
-            perintah_mencari_jenis_sistem_operasi = "uname -o"
-            try:
-                mencari_jenis_sistem_operasi = subprocess.run(perintah_mencari_jenis_sistem_operasi, shell=True, capture_output=True, text=True)
-                # Done
-                if mencari_jenis_sistem_operasi.returncode == 0:
-                    hasil_mencari_jenis_sistem_operasi = mencari_jenis_sistem_operasi.stdout.strip()
-                    if re.search(r"Android", hasil_mencari_jenis_sistem_operasi):
-                        print("[-] Instal dengan mengetikkan perintah 'pkg install binutils'.")
-                        exit(1)
-                    elif re.search(r"GNU/Linux", hasil_mencari_jenis_sistem_operasi):
-                        print("[-] Instal dengan mengetikkan perintah 'sudo apt-get install binutils'.")
-                        exit(1)
-                    else:
-                        print("[-] Sistem operasi Anda tidak mendukung untuk menjalankan program CrackStego.")
-                        exit(1)
-            except KeyboardInterrupt:
-                print("\n[-] Program dihentikan oleh pengguna.")
-                exit(1)
-            except Exception as e:
-                print(f"[-] Terjadi kesalahan : {e}.")
-                exit(1)
-        elif sistem_operasi == "Windows":
-            print("[-] Silahkan instal dari 'https://www.msys2.org/'.")
+        sistem_operasi = platform.system()
+        if sistem_operasi == "Linux": 
+            print("[-] Instal dengan mengetikkan perintah 'bash instal.sh'.")
             exit(1)
         else:
             print("[-] Sistem operasi Anda tidak mendukung untuk menjalankan program CrackStego.")
@@ -190,6 +172,7 @@ except Exception as e:
     exit(1)
     
 # Membersihkan layar terminal 
+sistem_operasi = platform.system()
 if sistem_operasi == "Linux":
     os.system("clear")
 elif sistem_operasi == "Windows":
