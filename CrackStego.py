@@ -161,8 +161,6 @@ except Exception as e:
 sistem_operasi = platform.system()
 if sistem_operasi == "Linux":
     os.system("clear")
-elif sistem_operasi == "Windows":
-    os.system("cls")
 else:
     print("[-] Sistem operasi Anda tidak mendukung untuk menjalankan program CrackStego.")
     exit(1)
