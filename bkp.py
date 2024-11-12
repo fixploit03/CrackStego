@@ -58,19 +58,27 @@ if sistem_operasi == "Linux":
             if re.search(r"Android", hasil_mencari_jenis_sistem_operasi):
                 print(f"[+] Sistem operasi : {hasil_mencari_jenis_sistem_operasi}")
             elif re.search(r"GNU/Linux", hasil_mencari_jenis_sistem_operasi):
-                perintah_mencari_jenis_distribusi = "cat /etc/os-release"
+                # File ID Linux
+                file_id_linux = "/etc/os-release"
+                perintah_mencari_jenis_distribusi_dan_id_linux = f"cat {file_id_linux}"
                 try:
-                    mencari_jenis_distribusi = subprocess.run(perintah_mencari_jenis_distribusi, shell=True, capture_output=True, text=True)
+                    mencari_jenis_distribusi_dan_id_linux = subprocess.run(perintah_mencari_jenis_distribusi_dan_id_linux, shell=True, capture_output=True, text=True)
                     # Done 
-                    if mencari_jenis_distribusi.returncode == 0:
-                        hasil_mencari_jenis_distribusi = mencari_jenis_distribusi.stdout.strip()
-                        if re.search(r"ubuntu", hasil_mencari_jenis_distribusi):
-                            print(f"[+] Sistem operasi : {sistem_operasi}")
-                        elif re.search(r"debian", hasil_mencari_jenis_distribusi):
-                            print(f"[+] Sistem operasi : {sistem_operasi}")
-                        else:
-                            print("[-] Sistem operasi Anda tidak mendukung untuk menjalankan program CrackStego.")
-                            exit(1)
+                    if mencari_jenis_distribusi_dan_id_linux.returncode == 0:
+                        hasil_mencari_jenis_distribusi_dan_id_linux = mencari_jenis_distribusi_dan_id_linux.stdout.strip()
+                        # Pola ID Linux 
+                        pola_id_linux = r'\bID=(\w+)'
+                        mencocokkan_pola_id_linux = re.search(pola_id_linux, mencari_jenis_distribusi_dan_id_linux.stdout)
+                        if mencocokkan_pola_id_linux:
+                            # ID Linux
+                            id_linux = mencocokkan_pola_id_linux.group(1).strip()
+                            if re.search(r"ubuntu", hasil_mencari_jenis_distribusi_dan_id_linux):
+                                print(f"[+] Sistem operasi : {sistem_operasi} ({id_linux})")
+                            elif re.search(r"debian", hasil_mencari_jenis_distribusi_dan_id_linux):
+                                print(f"[+] Sistem operasi : {sistem_operasi} ({id_linux})")
+                            else:
+                                print("[-] Sistem operasi Anda tidak mendukung untuk menjalankan program CrackStego.")
+                                exit(1)
                 except KeyboardInterrupt:
                     print("\n[-] Program dihentikan oleh pengguna.")
                     exit(1)
@@ -97,8 +105,8 @@ print("[*] Mengecek Steghide...")
 time.sleep(3)
 perintah_cek_steghide = "steghide --version"
 try:
-    cek_file_steghide = subprocess.run(perintah_cek_steghide, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-    if cek_file_steghide.returncode == 0:
+    cek_steghide = subprocess.run(perintah_cek_steghide, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    if cek_steghide.returncode == 0:
         print("[+] Steghide sudah terinstal.")
     else:
         print("[-] Steghide belum terinstal.")
@@ -142,8 +150,8 @@ print("[*] Mengecek Binutils...")
 time.sleep(3)
 perintah_cek_binutils = "ld --version"
 try:
-    cek_file_binutils = subprocess.run(perintah_cek_binutils, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-    if cek_file_binutils.returncode == 0:
+    cek_binutils = subprocess.run(perintah_cek_binutils, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    if cek_binutils.returncode == 0:
         print("[+] Binutils sudah terinstal.")
         input("\nTekan [Enter] untuk melanjutkan...")
         print("")
@@ -218,7 +226,7 @@ while True:
         if not os.path.isfile(file_stego):
             print(f"[-] File stego '{file_stego}' tidak ditemukan.")
             continue
-        if not file_stego.endswith((".jpg", ".jpeg", ".bmp", ".wav", ".au")):
+        if not file_stego.lower().endswith((".jpg", ".jpeg", ".bmp", ".wav", ".au")):
             print(f"[-] File '{file_stego}' bukan file stego.")
             continue
         perintah_cek_file_stego = f"strings {file_stego}"
@@ -238,10 +246,10 @@ while True:
                                 mencari_file_tersembunyi = subprocess.run(perintah_mencari_file_tersembunyi, shell=True, capture_output=True, text=True)
                                 # Done 
                                 if mencari_file_tersembunyi.returncode == 0:
-                                    pola = r'embedded file "(.*?)":'
-                                    cocok = re.search(pola, mencari_file_tersembunyi.stdout)
-                                    if cocok:
-                                        nama_file_tersembunyi = cocok.group(1).strip()
+                                    pola_file_tersembunyi = r'embedded file "(.*?)":'
+                                    mencocokkan_pola_file_tersembunyi = re.search(pola_file_tersembunyi, mencari_file_tersembunyi.stdout)
+                                    if mencocokkan_pola_file_tersembunyi:
+                                        nama_file_tersembunyi = mencocokkan_pola_file_tersembunyi.group(1).strip()
                                         if os.path.isfile(nama_file_tersembunyi):
                                             try:
                                                 os.remove(nama_file_tersembunyi)
@@ -296,7 +304,7 @@ while True:
         if not os.path.isfile(file_wordlist):
             print(f"[-] File wordlist '{file_wordlist}' tidak ditemukan.")
             continue
-        if not file_wordlist.endswith((".txt", ".lst")):
+        if not file_wordlist.lower().endswith((".txt", ".lst")):
             print(f"[-] File '{file_wordlist}' bukan file wordlist.")
             continue
         if os.stat(file_wordlist).st_size == 0:
@@ -336,10 +344,10 @@ try:
                       mencari_file_tersembunyi = subprocess.run(perintah_mencari_file_tersembunyi, shell=True, capture_output=True, text=True)
                       # Done 
                       if mencari_file_tersembunyi.returncode == 0:
-                          pola = r'embedded file "(.*?)":'
-                          cocok = re.search(pola, mencari_file_tersembunyi.stdout)
-                          if cocok:
-                              nama_file_tersembunyi = cocok.group(1).strip()
+                          pola_file_tersembunyi = r'embedded file "(.*?)":'
+                          mencocokkan_pola_file_tersembunyi = re.search(pola_file_tersembunyi, mencari_file_tersembunyi.stdout)
+                          if mencocokkan_pola_file_tersembunyi:
+                              nama_file_tersembunyi = mencocokkan_pola_file_tersembunyi.group(1).strip()
                               waktu_akhir = datetime.now()
                               print(f"[+] Kata sandi ditemukan : {kata_sandi}") 
                               if os.path.isfile(nama_file_tersembunyi):
