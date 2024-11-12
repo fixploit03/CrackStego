@@ -66,8 +66,7 @@ if sistem_operasi == "Linux":
                     # Done 
                     if mencari_jenis_distribusi_dan_id_linux.returncode == 0:
                         hasil_mencari_jenis_distribusi_dan_id_linux = mencari_jenis_distribusi_dan_id_linux.stdout.strip()
-                        mencocokkan_pola_id_linux = re.search(r'\bID=(\w+)', hasil_mencari_jenis_distribusi_dan_id_linux)
-                        if mencocokkan_pola_id_linux:
+                        if re.search(r'\bID=(\w+)', hasil_mencari_jenis_distribusi_dan_id_linux):
                             # ID Linux
                             id_linux = mencocokkan_pola_id_linux.group(1).strip()
                             if re.search(r"ubuntu", hasil_mencari_jenis_distribusi_dan_id_linux):
