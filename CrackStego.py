@@ -245,15 +245,19 @@ while True:
         file_wordlist = input("[#] Masukkan nama file wordlist : ").strip().strip("'\"")
         print(f"[*] Mengecek file wordlist '{file_wordlist}'...")
         time.sleep(3)
+        # Memeriksa apakah file wordlist sudah diinputkan
         if not file_wordlist:
             print("[-] File wordlist tidak boleh kosong.")
             continue 
+        # Memeriksa apakah file wordlist yang dimasukkan ada di sistem
         if not os.path.isfile(file_wordlist):
             print(f"[-] File wordlist '{file_wordlist}' tidak ditemukan.")
             continue
+        # Memeriksa apakah ekstensi file wordlist yang dimasukkan sesuai dengan format yang diharapkan
         if not file_wordlist.lower().endswith((".txt", ".lst")):
             print(f"[-] File '{file_wordlist}' bukan file wordlist.")
             continue
+        # Memeriksa apakah ukuran file wordlist adalah 0, yang berarti file tersebut kosong
         if os.stat(file_wordlist).st_size == 0:
             print(f"[-] File wordlist '{file_wordlist}' kosong.")
             continue 
