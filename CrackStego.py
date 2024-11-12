@@ -75,7 +75,7 @@ if sistem_operasi == "Linux":
         sys.exit(1)
 else:
     print("[-] Sistem operasi Anda tidak mendukung untuk menjalankan program CrackStego.")
-    exit(1)
+    sys.exit(1)
     
 # Mengecek Steghide
 print("[*] Mengecek Steghide...")
