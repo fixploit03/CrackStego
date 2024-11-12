@@ -162,7 +162,7 @@ while True:
             # if 1 
             if cek_file_stego.returncode == 0:
                 pola_file_steghide = r"%&'\(\)\*456789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz\n\s*#3R\n&'\(\)\*56789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz"
-                mencocokkan_pola_file_steghide = re.search(pola_file_steghide, cek_file_stego.stdout):
+                mencocokkan_pola_file_steghide = re.search(pola_file_steghide, cek_file_stego.stdout)
                 # if 2
                 if mencocokkan_pola_file_steghide:
                     perintah_cek_enkripsi_file_stego = f"steghide extract -sf {file_stego} -p '' -f"
