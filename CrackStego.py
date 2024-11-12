@@ -146,12 +146,15 @@ while True:
         file_stego = input("[#] Masukkan nama file stego : ").strip().strip("'\"")
         print(f"[*] Mengecek file stego '{file_stego}'...")
         time.sleep(3)
+        # Memeriksa apakah file stego sudah diinputkan
         if not file_stego:
             print("[-] File stego tidak boleh kosong.")
-            continue 
+            continue
+        # Memeriksa apakah file stego yang dimasukkan ada di sistem
         if not os.path.isfile(file_stego):
             print(f"[-] File stego '{file_stego}' tidak ditemukan.")
             continue
+        # Memeriksa apakah ekstensi file stego yang dimasukkan sesuai dengan format yang diharapkan
         if not file_stego.lower().endswith((".jpg", ".jpeg", ".bmp", ".wav", ".au")):
             print(f"[-] File '{file_stego}' bukan file stego.")
             continue
@@ -159,7 +162,7 @@ while True:
         # try 2
         try:
             cek_file_stego = subprocess.run(perintah_cek_file_stego, shell=True, capture_output=True, text=True)
-            # if 1 
+            # if 1
             if cek_file_stego.returncode == 0:
                 pola_file_steghide = r"%&'\(\)\*456789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz\n\s*#3R\n&'\(\)\*56789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz"
                 mencocokkan_pola_file_steghide = re.search(pola_file_steghide, cek_file_stego.stdout)
