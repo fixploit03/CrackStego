@@ -150,8 +150,8 @@ print("[*] Mengecek Binutils...")
 time.sleep(3)
 perintah_cek_binutils = "ld --version"
 try:
-    cek_file_binutils = subprocess.run(perintah_cek_binutils, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-    if cek_file_binutils.returncode == 0:
+    cek_binutils = subprocess.run(perintah_cek_binutils, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    if cek_binutils.returncode == 0:
         print("[+] Binutils sudah terinstal.")
         input("\nTekan [Enter] untuk melanjutkan...")
         print("")
