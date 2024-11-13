@@ -266,7 +266,7 @@ kata_sandi_ditemukan = False
 # Proses cracking file stego
 try:
     with open(file_wordlist, "r", encoding="latin-1", errors="ignore") as fw:
-        daftar_kata_sandi = fw.read().splitlines()
+        daftar_kata_sandi = [line for line in fw.read().splitlines() if line.strip()]
         jumlah_kata_sandi = len(daftar_kata_sandi)
         waktu_mulai = datetime.now()
         print(f"[+] Jumlah kata sandi yang terdapat dalam file wordlist : {jumlah_kata_sandi}")
