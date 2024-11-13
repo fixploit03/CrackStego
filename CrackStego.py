@@ -255,10 +255,10 @@ while True:
         break
     except KeyboardInterrupt:
         print("\n[-] Program dihentikan oleh pengguna.")
-        exit(1)
+        sys.exit(1)
     except Exception as e:
         print(f"\n[-] Terjadi kesalahan : {e}.")
-        exit(1)
+        sys.exit(1)
 
 print("")
 kata_sandi_ditemukan = False
