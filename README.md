@@ -8,7 +8,7 @@
 
 `CrackStego` adalah program Python yang dirancang untuk meng-crack file stego yang dihasilkan oleh alat [Steghide](https://steghide.sourceforge.net/) dengan menggunakan teknik serangan [Dictionary Attack](https://www.asdf.id/definisi-dictionary-attack-adalah/).
 
-> **Disclaimer**: Program ini dirancang hanya untuk tujuan pendidikan dan penelitian yang sah. Dilarang keras menggunakan program ini untuk kegiatan ilegal, merusak, atau tanpa izin pemilik file. Pengguna bertanggung jawab penuh atas segala konsekuensi hukum yang mungkin timbul dari penggunaan program ini. Pastikan untuk selalu mematuhi peraturan dan etika yang berlaku di wilayah Anda.
+> **Peringatan**: Program ini dirancang hanya untuk tujuan pendidikan dan penelitian yang sah. Dilarang keras menggunakan program ini untuk kegiatan ilegal, merusak, atau tanpa izin pemilik file. Pengguna bertanggung jawab penuh atas segala konsekuensi hukum yang mungkin timbul dari penggunaan program ini. Pastikan untuk selalu mematuhi peraturan dan etika yang berlaku di wilayah Anda.
 
 ## Apa Itu File Stego?
 
