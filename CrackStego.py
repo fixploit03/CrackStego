@@ -48,7 +48,6 @@ atas segala konsekuensi hukum yang mungkin timbul dari penggunaan
 program ini. Pastikan untuk selalu mematuhi peraturan dan etika yang 
 berlaku di wilayah Anda.
 """)
-time.sleep(3)
 
 # Konfirmasi
 input("Tekan [Enter] untuk melanjutkan...")
