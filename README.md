@@ -49,6 +49,8 @@ Program ini dilisensikan di bawah [Lisensi MIT](https://github.com/fixploit03/Cr
 
 Jika Anda menemukan bug atau masalah dalam program ini, silakan laporkan melalui [Issues](https://github.com/fixploit03/CrackStego/issues) di repositori GitHub. Sertakan deskripsi yang jelas mengenai masalah yang Anda temui.
 
-> **Catatan**: Program ini hanya berfungsi untuk file stego yang dihasilkan oleh Steghide.
+> **Catatan**:
+> 1. Program ini hanya berfungsi untuk file stego yang dihasilkan oleh Steghide.
+> 2. Program ini menggunakan teknik serangan dictionary attack, di mana keberhasilan menemukan kata sandi tergantung pada isi file wordlist yang digunakan.
 
 Selamat mencoba!
