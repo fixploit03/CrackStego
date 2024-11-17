@@ -94,7 +94,7 @@ try:
         print("[+] Steghide sudah terinstal.")
     else:
         print("[-] Steghide belum terinstal.")
-        print("[-] Instal dengan mengetikkan perintah 'sudo apt-get install steghide'.")
+        print("[-] Silahkan instal dengan mengetikkan perintah 'sudo apt-get install steghide'.")
         sys.exit(1)
 except KeyboardInterrupt:
     print("\n[-] Program dihentikan oleh pengguna.")
@@ -116,7 +116,7 @@ try:
         print("")
     else:
         print("[-] Binutils belum terinstal.") 
-        print("[-] Instal dengan mengetikkan perintah 'sudo apt-get install binutils'.")
+        print("[-] Silahkan instal dengan mengetikkan perintah 'sudo apt-get install binutils'.")
         sys.exit(1)
 except KeyboardInterrupt:
     print("\n[-] Program dihentikan oleh pengguna.")
