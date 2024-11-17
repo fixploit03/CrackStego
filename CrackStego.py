@@ -80,7 +80,10 @@ if sistem_operasi == "Linux":
 else:
     print("[-] Sistem operasi Anda tidak mendukung untuk menjalankan program CrackStego.")
     sys.exit(1)
-    
+
+# Mengecek alat-alat yang dibutuhkan CrackStego 
+print("[*] Mengecek alat-alat yang dibutuhkan oleh CrackStego...")
+time.sleep(3)
 # Mengecek Steghide
 print("[*] Mengecek Steghide...")
 time.sleep(3)
@@ -108,6 +111,7 @@ try:
     cek_binutils = subprocess.run(perintah_cek_binutils, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     if cek_binutils.returncode == 0:
         print("[+] Binutils sudah terinstal.")
+        print("[+] Semua alat yang dibutuhkan oleh CrackStego sudah terinstal.")
         input("\nTekan [Enter] untuk melanjutkan...")
         print("")
     else:
