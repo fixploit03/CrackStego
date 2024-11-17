@@ -5,22 +5,22 @@
 # | |_   | | \  /| |_) | |  | | | | |  | || | | ||_ \  
 # |  _|  | | /  \|  __/| |__| |_| | |  | || |_| |__) | 
 # |_|   |___/_/\_\_|   |_____\___/___| |_| \___/____/                                               
-#----------------------------------------------------------------------------------------------------------------------------------------------------------
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Program   : CrackStego
-# Deskripsi : Program Python yang dirancang untuk meng-crack file stego yang dihasilkan oleh Steghide dengan menggunakan teknik serangan Dictionary Attack.
+# Deskripsi : Program Python yang dirancang untuk meng-crack file stego yang dihasilkan oleh alat Steghide dengan menggunakan teknik serangan Dictionary Attack.
 # Pembuat   : fixploit03 
 # Rilis     : 5-10-2024
 # Github    : https://github.com/fixploit03/CrackStego/
-#----------------------------------------------------------------------------------------------------------------------------------------------------------
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Program ini dirancang hanya untuk tujuan pendidikan dan penelitian yang sah. Dilarang keras menggunakan program 
 # ini untuk kegiatan ilegal, merusak, atau tanpa izin pemilik file. Pengguna bertanggung jawab penuh atas segala
 # konsekuensi hukum yang mungkin timbul dari penggunaan program ini. Pastikan untuk selalu mematuhi peraturan dan 
 # etika yang berlaku di wilayah Anda.
-#----------------------------------------------------------------------------------------------------------------------------------------------------------
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------
 # DILARANG KERAS UNTUK MENGUBAH DAN MEMUBLIKASIKAN DENGAN NAMA PRIBADI TANPA SEIZIN PEMBUAT. DIBUAT OPEN SOURCE
 # AGAR DAPAT DISESUAIKAN DENGAN KEBUTUHAN MASING-MASING. SAYA TIDAK MELARANG UNTUK MENGEDIT KODE YANG ADA, AGAR
 # KALIAN JUGA BISA BERKARYA.
-#----------------------------------------------------------------------------------------------------------------------------------------------------------
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------
                               
 # Import modul yang dibutuhkan 
 import os
@@ -33,7 +33,9 @@ from datetime import datetime
 
 # Banner selamat datang
 print(f"""
-Selamat datang di CrackStego
+Selamat datang di CrackStego (http:/github.com/fixploit03/CrackStego/)
+----------------------------------------------------------------------
+
 
 Peringatan
 ----------
