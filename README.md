@@ -6,7 +6,7 @@
 [![Dipelihara](https://img.shields.io/badge/Dipelihara-Tidak-red)](https://img.shields.io/badge/Dipelihara-Tidak-red)
 [![Dikembangkan](https://img.shields.io/badge/Dikembangkan%20di-Kali%20Linux-blue)](https://www.kali.org/)
 
-`CrackStego` adalah program Python yang dirancang untuk meng-crack file stego yang dihasilkan oleh [Steghide](https://steghide.sourceforge.net/) dengan menggunakan teknik serangan [Dictionary Attack](https://www.asdf.id/definisi-dictionary-attack-adalah/).
+`CrackStego` adalah program Python yang dirancang untuk meng-crack file stego yang dihasilkan oleh alat [Steghide](https://steghide.sourceforge.net/) dengan menggunakan teknik serangan [Dictionary Attack](https://www.asdf.id/definisi-dictionary-attack-adalah/).
 
 > **Disclaimer**: Program ini dirancang hanya untuk tujuan pendidikan dan penelitian yang sah. Dilarang keras menggunakan program ini untuk kegiatan ilegal, merusak, atau tanpa izin pemilik file. Pengguna bertanggung jawab penuh atas segala konsekuensi hukum yang mungkin timbul dari penggunaan program ini. Pastikan untuk selalu mematuhi peraturan dan etika yang berlaku di wilayah Anda.
 
@@ -50,7 +50,7 @@ Program ini dilisensikan di bawah [Lisensi MIT](https://github.com/fixploit03/Cr
 Jika Anda menemukan bug atau masalah dalam program ini, silakan laporkan melalui [Issues](https://github.com/fixploit03/CrackStego/issues) di repositori GitHub. Sertakan deskripsi yang jelas mengenai masalah yang Anda temui.
 
 > **Catatan**:
-> 1. Program ini hanya berfungsi untuk file stego yang dihasilkan oleh Steghide.
+> 1. Program ini hanya berfungsi untuk file stego yang dihasilkan oleh alat Steghide.
 > 2. Program ini menggunakan teknik serangan dictionary attack, di mana keberhasilan menemukan kata sandi tergantung pada isi file wordlist yang digunakan.
 
-Selamat mencoba!
+**Selamat mencoba!**
