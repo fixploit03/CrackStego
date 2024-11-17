@@ -50,6 +50,9 @@ berlaku di wilayah Anda.
 """)
 time.sleep(3)
 
+# Konfirmasi
+input("Tekan [Enter] untuk melanjutkan...")
+
 # Mengecek sistem operasi
 print("[*] Mengecek sistem operasi...")
 time.sleep(3)
