@@ -53,7 +53,7 @@ berlaku di wilayah Anda.
 input("Tekan [Enter] untuk melanjutkan...")
 
 # Mengecek sistem operasi
-print("[*] Mengecek sistem operasi...")
+print("\n[*] Mengecek sistem operasi...")
 time.sleep(3)
 sistem_operasi = platform.system()
 if sistem_operasi == "Linux":
